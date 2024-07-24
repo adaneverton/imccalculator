@@ -2,4 +2,47 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+        <!-- Cores Primárias -->
+        <color name="primary_blue">#2196F3</color>
+        <color name="primary_red">#F44336</color>
+        <color name="primary_green">#4CAF50</color>
+        <color name="primary_yellow">#FFEB3B</color>
+
+        <!-- Cores Secundárias -->
+        <color name="secondary_orange">#FF9800</color>
+        <color name="secondary_purple">#9C27B0</color>
+        <color name="secondary_cyan">#00BCD4</color>
+        <color name="secondary_lime">#CDDC39</color>
+
+        <!-- Cores Terciárias -->
+        <color name="tertiary_teal">#009688</color>
+        <color name="tertiary_indigo">#3F51B5</color>
+        <color name="tertiary_amber">#FFC107</color>
+        <color name="tertiary_pink">#E91E63</color>
+
+        <!-- Variações de Cinza -->
+        <color name="grey_light">#F5F5F5</color>
+        <color name="grey_medium">#9E9E9E</color>
+        <color name="grey_dark">#616161</color>
+        <color name="grey_very_dark">#212121</color>
+
+        <!-- Variações de Azul -->
+        <color name="blue_light">#BBDEFB</color>
+        <color name="blue_medium">#2196F3</color>
+        <color name="blue_dark">#1976D2</color>
+        <color name="blue_very_dark">#0D47A1</color>
+
+        <!-- Variações de Amarelo -->
+        <color name="yellow_light">#FFF9C4</color>
+        <color name="yellow_medium">#FFEB3B</color>
+        <color name="yellow_dark">#FBC02D</color>
+        <color name="yellow_very_dark">#F57F17</color>
+
+        <!-- Variações de Vermelho -->
+        <color name="red_light">#FFCDD2</color>
+        <color name="red_medium">#F44336</color>
+        <color name="red_dark">#D32F2F</color>
+        <color name="red_very_dark">#B71C1C</color>
+
 </resources>
