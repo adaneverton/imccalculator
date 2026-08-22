@@ -32,3 +32,9 @@ COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
 IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 ```
+
+## Site institucional — Five Lines
+
+A pasta [`site/`](site/) contém o site da Five Lines (impressão 3D): página estática em
+HTML, CSS e JavaScript puros, sem build. Instruções de personalização e publicação em
+[`site/README.md`](site/README.md).

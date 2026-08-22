@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Five Lines | Impressão 3D sob medida — peças, protótipos e produtos personalizados</title>
+<meta name="description" content="A Five Lines transforma ideias em peças reais com impressão 3D. Produtos prontos, peças sob medida, protótipos e brindes personalizados com acabamento profissional.">
+<meta name="theme-color" content="#011e5a">
+<link rel="canonical" href="https://fivelines.com.br/">
+
+<!-- Open Graph / redes sociais -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Five Lines">
+<meta property="og:title" content="Five Lines | Impressão 3D sob medida">
+<meta property="og:description" content="Do arquivo 3D ao produto na sua mão: peças sob medida, protótipos, produtos personalizados e produção em pequena escala.">
+<meta property="og:image" content="assets/img/logo.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" href="assets/img/favicon-32.png" type="image/png">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Five Lines",
+  "description": "Impressão 3D sob medida: produtos personalizados, peças técnicas, protótipos e produção em pequena escala.",
+  "image": "assets/img/logo.png",
+  "url": "https://fivelines.com.br/",
+  "telephone": "+55 00 00000-0000",
+  "email": "contato@fivelines.com.br",
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Sua cidade",
+    "addressRegion": "UF",
+    "addressCountry": "BR"
+  },
+  "areaServed": "BR",
+  "sameAs": ["https://instagram.com/fivelines"]
+}
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Ir para o conteúdo</a>
+
+<!-- Sprite de ícones e ilustrações -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <linearGradient id="fl-grad" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0%" stop-color="#011e5a"/>
+      <stop offset="100%" stop-color="#049c90"/>
+    </linearGradient>
+  </defs>
+
+  <!-- ícones de interface -->
+  <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M20 6 9 17l-5-5"/>
+  </symbol>
+  <symbol id="i-printer" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4 4h16v5H4zM4 9v9M20 9v9M8 18h8v3H8zM12 9v5"/>
+  </symbol>
+  <symbol id="i-cube" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 2.6 21 7v10l-9 4.4L3 17V7z"/><path d="m3 7 9 4.4L21 7M12 11.4V21.4"/>
+  </symbol>
+  <symbol id="i-ruler" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M3 13.5 13.5 3 21 10.5 10.5 21z"/><path d="M7 9.5 9 11.5M10 6.5 12 8.5M13 3.5 15 5.5"/>
+  </symbol>
+  <symbol id="i-layers" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+    <path d="m12 3 9 5-9 5-9-5z"/><path d="m3 13 9 5 9-5M3 17l9 5 9-5"/>
+  </symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="9"/><path d="M12 7v5.2l3.2 2"/>
+  </symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 2.8 20 6v6c0 4.6-3.3 7.9-8 9.2C7.3 19.9 4 16.6 4 12V6z"/><path d="m8.8 12 2.2 2.2 4.2-4.4"/>
+  </symbol>
+  <symbol id="i-truck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M3 6h11v10H3zM14 9h4l3 3.2V16h-7z"/><circle cx="7" cy="18" r="2"/><circle cx="17.5" cy="18" r="2"/>
+  </symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M20 12.5c0 3.9-3.6 7-8 7-1 0-2-.2-2.9-.5L4 21l1.4-3.7C4.5 16 4 14.3 4 12.5c0-3.9 3.6-7 8-7s8 3.1 8 7z"/>
+  </symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m3.5 7 8.5 6 8.5-6"/>
+  </symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 21.5s7-5.6 7-11a7 7 0 1 0-14 0c0 5.4 7 11 7 11z"/><circle cx="12" cy="10.3" r="2.6"/>
+  </symbol>
+  <symbol id="i-whats" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M17.5 14.4c-.3-.2-1.7-.8-1.9-.9-.3-.1-.5-.2-.6.2-.2.3-.7.9-.8 1-.2.2-.3.2-.6.1s-1.2-.5-2.3-1.4c-.9-.8-1.4-1.7-1.6-2s0-.5.1-.6l.5-.5c.1-.2.2-.3.3-.5s0-.4 0-.5-.6-1.5-.9-2.1c-.2-.5-.5-.4-.6-.5h-.5c-.2 0-.5.1-.7.3-.3.3-1 .9-1 2.3s1 2.7 1.2 2.9c.1.2 2 3.1 5 4.3.7.3 1.2.5 1.7.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3zM12 2.2A9.8 9.8 0 0 0 3.6 17l-1.4 5.1 5.2-1.4A9.8 9.8 0 1 0 12 2.2zm0 17.9c-1.5 0-2.9-.4-4.1-1.1l-.3-.2-3.1.8.8-3-.2-.3a8.1 8.1 0 1 1 6.9 3.8z"/>
+  </symbol>
+  <symbol id="i-instagram" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+    <rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="3.7"/><circle cx="17" cy="7" r="1.1" fill="currentColor" stroke="none"/>
+  </symbol>
+  <symbol id="i-linkedin" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M4.98 3.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM3 9.5h4v11H3zM10 9.5h3.8v1.5a4.2 4.2 0 0 1 3.7-1.8c3 0 4.5 1.9 4.5 5.3v6h-4v-5.4c0-1.6-.6-2.5-1.9-2.5-1.1 0-1.9.7-2.2 1.7-.1.3-.1.7-.1 1.1v5.1h-4z"/>
+  </symbol>
+
+  <!-- ilustrações de produtos -->
+  <symbol id="p-vaso" viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M42 24h36c-6 12-8 22-8 32s4 20 10 30c4 7-2 14-10 14H50c-8 0-14-7-10-14 6-10 10-20 10-30s-2-20-8-32z"/>
+    <path d="M44 46h32M44 62h34M46 80h30M50 94h22" opacity=".55"/>
+  </symbol>
+  <symbol id="p-luminaria" viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M36 34h48l-6 52H42z"/><path d="M40 48h40M41 62h38M42 76h36" opacity=".55"/>
+    <path d="M46 96h28M52 104h16"/>
+  </symbol>
+  <symbol id="p-organizador" viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M22 44h76v46H22z"/><path d="M22 62h76M52 44v46M76 62v28"/>
+    <path d="M32 34v10M40 30v14" opacity=".7"/>
+  </symbol>
+  <symbol id="p-headset" viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M38 62a22 22 0 0 1 44 0"/><rect x="30" y="60" width="12" height="20" rx="5"/><rect x="78" y="60" width="12" height="20" rx="5"/>
+    <path d="M60 84v10M40 96h40l6 12H34z"/>
+  </symbol>
+  <symbol id="p-suporte-cel" viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="44" y="22" width="34" height="58" rx="5" transform="rotate(9 61 51)"/>
+    <path d="M30 84h60l6 14H24z"/><path d="M46 92h28" opacity=".55"/>
+  </symbol>
+  <symbol id="p-engrenagem" viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M60 26v10M60 84v10M94 60H84M36 60H26M84 36l-7 7M43 77l-7 7M84 84l-7-7M43 43l-7-7"/>
+    <circle cx="60" cy="60" r="24"/><circle cx="60" cy="60" r="10"/>
+  </symbol>
+  <symbol id="p-peca" viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M32 40h56v14H68v34H52V54H32z"/><circle cx="40" cy="47" r="3" opacity=".6"/><circle cx="80" cy="47" r="3" opacity=".6"/>
+    <path d="M52 70h16" opacity=".55"/>
+  </symbol>
+  <symbol id="p-gabarito" viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M24 74 74 24l22 22-50 50z"/><path d="m38 60 8 8M50 48l8 8M62 36l8 8" opacity=".6"/>
+    <path d="M24 74v22h22"/>
+  </symbol>
+  <symbol id="p-chaveiro" viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="42" cy="42" r="12"/><path d="M50 50 88 88"/><path d="m74 74 10 10M82 66l10 10"/>
+    <path d="M60 30h34v18H60z" opacity=".6"/>
+  </symbol>
+  <symbol id="p-brinde" viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M26 52h68v42H26z"/><path d="M22 38h76v14H22zM60 38v56"/>
+    <path d="M60 38c-6-12-22-12-22-2 0 6 12 4 22 2zM60 38c6-12 22-12 22-2 0 6-12 4-22 2z"/>
+  </symbol>
+  <symbol id="p-miniatura" viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="60" cy="34" r="11"/><path d="M46 92V62c0-8 6-14 14-14s14 6 14 14v30"/>
+    <path d="M46 68 32 82M74 68l14 14M52 92v10M68 92v10"/>
+    <ellipse cx="60" cy="106" rx="26" ry="5" opacity=".5"/>
+  </symbol>
+  <symbol id="p-dado" viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M60 20 96 40v40L60 100 24 80V40z"/><path d="m24 40 36 20 36-20M60 60v40" opacity=".6"/>
+    <circle cx="44" cy="66" r="3"/><circle cx="76" cy="66" r="3"/>
+  </symbol>
+</svg>
+
+<!-- ============ CABEÇALHO ============ -->
+<header class="header" id="header">
+  <div class="container header__inner">
+    <a class="brand" href="#top" aria-label="Five Lines — página inicial">
+      <img class="brand__dark" src="assets/img/logo.png" alt="Five Lines" width="720" height="235">
+      <img class="brand__light" src="assets/img/logo-light.png" alt="Five Lines" width="720" height="235">
+    </a>
+
+    <nav class="nav" id="nav" aria-label="Navegação principal">
+      <a href="#servicos">Serviços</a>
+      <a href="#produtos">Produtos</a>
+      <a href="#processo">Como funciona</a>
+      <a href="#materiais">Materiais</a>
+      <a href="#faq">Dúvidas</a>
+      <a href="#contato">Contato</a>
+      <a class="btn btn--primary btn--sm" href="#contato">Pedir orçamento</a>
+    </nav>
+
+    <a class="btn btn--primary btn--sm header__cta" href="#contato">Pedir orçamento</a>
+
+    <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="nav">
+      <span></span>
+      <span class="sr-only">Abrir menu</span>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="top">
+    <div class="container hero__inner">
+      <div class="hero__text">
+        <span class="eyebrow">Impressão 3D sob medida</span>
+        <h1>Do arquivo 3D ao <span class="gradient-text">produto na sua mão</span>.</h1>
+        <p class="lead">
+          A Five Lines projeta e imprime peças com acabamento profissional — de produtos
+          personalizados e itens de decoração a componentes técnicos e protótipos funcionais.
+          Uma unidade ou um lote inteiro, sempre com a mesma precisão.
+        </p>
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="#contato">Pedir orçamento</a>
+          <a class="btn btn--ghost" href="#produtos">Ver produtos</a>
+        </div>
+        <ul class="hero__points">
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg> Orçamento sem compromisso</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg> Peças sob medida</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg> Envio para todo o Brasil</li>
+        </ul>
+      </div>
+
+      <div class="hero__art" aria-hidden="true">
+        <svg viewBox="0 0 520 440" role="img">
+          <title>Ilustração de uma impressora 3D produzindo uma peça</title>
+          <!-- base -->
+          <rect x="60" y="330" width="400" height="18" rx="9" fill="url(#fl-grad)" opacity=".18"/>
+          <rect x="92" y="300" width="336" height="34" rx="10" fill="url(#fl-grad)" opacity=".9"/>
+          <!-- colunas -->
+          <rect x="104" y="70" width="14" height="234" rx="7" fill="#011e5a" opacity=".85"/>
+          <rect x="402" y="70" width="14" height="234" rx="7" fill="#011e5a" opacity=".85"/>
+          <rect x="98" y="58" width="324" height="16" rx="8" fill="url(#fl-grad)"/>
+          <!-- eixo / extrusora -->
+          <rect x="110" y="120" width="300" height="12" rx="6" fill="#049c90" opacity=".55"/>
+          <rect x="232" y="106" width="58" height="40" rx="10" fill="url(#fl-grad)"/>
+          <path d="M261 146v22" stroke="#049c90" stroke-width="5" stroke-linecap="round"/>
+          <!-- peça em construção: camadas -->
+          <g fill="url(#fl-grad)">
+            <rect x="196" y="286" width="130" height="12" rx="6"/>
+            <rect x="202" y="270" width="118" height="12" rx="6" opacity=".94"/>
+            <rect x="209" y="254" width="104" height="12" rx="6" opacity=".88"/>
+            <rect x="214" y="238" width="94" height="12" rx="6" opacity=".82"/>
+            <rect x="219" y="222" width="84" height="12" rx="6" opacity=".76"/>
+            <rect x="224" y="206" width="74" height="12" rx="6" opacity=".68"/>
+            <rect x="230" y="190" width="62" height="12" rx="6" opacity=".55"/>
+            <rect x="236" y="174" width="50" height="12" rx="6" opacity=".38"/>
+          </g>
+          <!-- filamento -->
+          <circle cx="452" cy="196" r="42" fill="none" stroke="url(#fl-grad)" stroke-width="14" opacity=".35"/>
+          <circle cx="452" cy="196" r="12" fill="#049c90" opacity=".5"/>
+          <path d="M410 196c-30 0-40 -40 -120 -50" fill="none" stroke="#049c90" stroke-width="4" stroke-linecap="round" opacity=".55"/>
+          <!-- marcações -->
+          <path d="M78 300h-24M78 240h-24M78 180h-24" stroke="#049c90" stroke-width="4" stroke-linecap="round" opacity=".35"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAIXA ============ -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee__track">
+      <span>Impressão FDM</span><span>Resina de alta definição</span><span>Prototipagem rápida</span>
+      <span>Modelagem 3D</span><span>Peças de reposição</span><span>Brindes corporativos</span>
+      <span>Produção em pequena escala</span>
+      <span>Impressão FDM</span><span>Resina de alta definição</span><span>Prototipagem rápida</span>
+      <span>Modelagem 3D</span><span>Peças de reposição</span><span>Brindes corporativos</span>
+      <span>Produção em pequena escala</span>
+    </div>
+  </div>
+
+  <!-- ============ SERVIÇOS ============ -->
+  <section class="section" id="servicos">
+    <div class="container">
+      <div class="section__head reveal">
+        <span class="eyebrow">O que fazemos</span>
+        <h2>Soluções completas em impressão 3D</h2>
+        <p class="lead">Da ideia ao produto acabado. Você traz o arquivo pronto ou apenas a necessidade — cuidamos do resto.</p>
+      </div>
+
+      <div class="grid grid--4">
+        <article class="card reveal">
+          <div class="card__icon"><svg aria-hidden="true"><use href="#i-printer"/></svg></div>
+          <h3>Impressão sob demanda</h3>
+          <p>Já tem o arquivo STL, OBJ ou 3MF? Enviamos o orçamento com material, cor e prazo definidos.</p>
+          <ul class="card__list">
+            <li>Camadas de 0,08 mm a 0,28 mm</li>
+            <li>Mais de 20 cores disponíveis</li>
+          </ul>
+        </article>
+
+        <article class="card reveal">
+          <div class="card__icon"><svg aria-hidden="true"><use href="#i-cube"/></svg></div>
+          <h3>Modelagem 3D</h3>
+          <p>Sem arquivo? Modelamos a partir de um desenho, foto, medida ou da peça original.</p>
+          <ul class="card__list">
+            <li>Engenharia reversa</li>
+            <li>Ajuste de encaixes e tolerâncias</li>
+          </ul>
+        </article>
+
+        <article class="card reveal">
+          <div class="card__icon"><svg aria-hidden="true"><use href="#i-ruler"/></svg></div>
+          <h3>Prototipagem rápida</h3>
+          <p>Valide o formato, o encaixe e a ergonomia antes de investir em molde ou produção em série.</p>
+          <ul class="card__list">
+            <li>Ciclos curtos de iteração</li>
+            <li>Protótipos funcionais</li>
+          </ul>
+        </article>
+
+        <article class="card reveal">
+          <div class="card__icon"><svg aria-hidden="true"><use href="#i-layers"/></svg></div>
+          <h3>Pequenos lotes</h3>
+          <p>Produção de dezenas a centenas de peças com padrão constante e custo previsível.</p>
+          <ul class="card__list">
+            <li>Brindes e kits personalizados</li>
+            <li>Peças para revenda</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PRODUTOS ============ -->
+  <section class="section section--soft" id="produtos">
+    <div class="container">
+      <div class="section__head reveal">
+        <span class="eyebrow">Catálogo</span>
+        <h2>Produtos que já imprimimos</h2>
+        <p class="lead">
+          Uma amostra do que sai da nossa bancada. Todos os itens podem ser adaptados em
+          tamanho, cor e material — e o que você não encontrar aqui, a gente faz sob medida.
+        </p>
+      </div>
+
+      <!-- Filtros do catálogo -->
+      <div class="filters reveal" role="group" aria-label="Filtrar produtos por categoria">
+        <button class="filter" type="button" data-filter="todos" aria-pressed="true">Todos</button>
+        <button class="filter" type="button" data-filter="decoracao" aria-pressed="false">Decoração</button>
+        <button class="filter" type="button" data-filter="utilidades" aria-pressed="false">Utilidades</button>
+        <button class="filter" type="button" data-filter="tecnicas" aria-pressed="false">Peças técnicas</button>
+        <button class="filter" type="button" data-filter="personalizados" aria-pressed="false">Personalizados</button>
+        <button class="filter" type="button" data-filter="colecionaveis" aria-pressed="false">Colecionáveis</button>
+      </div>
+
+      <!--
+        PREÇOS DE EXEMPLO: os valores abaixo são apenas um ponto de partida.
+        Ajuste-os (ou troque por "Sob consulta") antes de publicar o site.
+      -->
+      <div class="grid products" id="catalogo">
+        <article class="product reveal" data-category="decoracao" data-name="Vaso espiral">
+          <div class="product__art"><span class="product__tag">Decoração</span><svg aria-hidden="true"><use href="#p-vaso"/></svg></div>
+          <div class="product__body">
+            <h3>Vaso espiral</h3>
+            <p>Vaso decorativo com textura em espiral, impresso em parede única. Vários tamanhos e cores.</p>
+            <div class="product__foot">
+              <span class="product__price">R$ 45<small>a partir de</small></span>
+              <button class="btn btn--ghost btn--sm" type="button" data-quote="Vaso espiral">Orçamento</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product reveal" data-category="decoracao" data-name="Luminária lithophane">
+          <div class="product__art"><span class="product__tag">Decoração</span><svg aria-hidden="true"><use href="#p-luminaria"/></svg></div>
+          <div class="product__body">
+            <h3>Luminária lithophane</h3>
+            <p>Sua foto vira relevo e aparece quando a luz acende. Presente personalizado com efeito surpreendente.</p>
+            <div class="product__foot">
+              <span class="product__price">R$ 89<small>a partir de</small></span>
+              <button class="btn btn--ghost btn--sm" type="button" data-quote="Luminária lithophane">Orçamento</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product reveal" data-category="utilidades" data-name="Organizador de mesa">
+          <div class="product__art"><span class="product__tag">Utilidades</span><svg aria-hidden="true"><use href="#p-organizador"/></svg></div>
+          <div class="product__body">
+            <h3>Organizador de mesa</h3>
+            <p>Divisórias modulares para canetas, cabos e miudezas. Você escolhe o número de compartimentos.</p>
+            <div class="product__foot">
+              <span class="product__price">R$ 55<small>a partir de</small></span>
+              <button class="btn btn--ghost btn--sm" type="button" data-quote="Organizador de mesa">Orçamento</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product reveal" data-category="utilidades" data-name="Suporte de headset">
+          <div class="product__art"><span class="product__tag">Utilidades</span><svg aria-hidden="true"><use href="#p-headset"/></svg></div>
+          <div class="product__body">
+            <h3>Suporte de headset</h3>
+            <p>Apoio de mesa ou de parafusar sob a mesa, com base antiderrapante e reforço interno.</p>
+            <div class="product__foot">
+              <span class="product__price">R$ 49<small>a partir de</small></span>
+              <button class="btn btn--ghost btn--sm" type="button" data-quote="Suporte de headset">Orçamento</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product reveal" data-category="utilidades" data-name="Suporte de celular">
+          <div class="product__art"><span class="product__tag">Utilidades</span><svg aria-hidden="true"><use href="#p-suporte-cel"/></svg></div>
+          <div class="product__body">
+            <h3>Suporte de celular</h3>
+            <p>Ângulo ajustável, passagem para o cabo de carga e opção com nome ou logo em relevo.</p>
+            <div class="product__foot">
+              <span class="product__price">R$ 35<small>a partir de</small></span>
+              <button class="btn btn--ghost btn--sm" type="button" data-quote="Suporte de celular">Orçamento</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product reveal" data-category="tecnicas" data-name="Peça de reposição">
+          <div class="product__art"><span class="product__tag">Peças técnicas</span><svg aria-hidden="true"><use href="#p-peca"/></svg></div>
+          <div class="product__body">
+            <h3>Peça de reposição</h3>
+            <p>Aquele componente que quebrou e não se acha mais: medimos, modelamos e imprimimos igual.</p>
+            <div class="product__foot">
+              <span class="product__price">Sob consulta<small>conforme o projeto</small></span>
+              <button class="btn btn--ghost btn--sm" type="button" data-quote="Peça de reposição">Orçamento</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product reveal" data-category="tecnicas" data-name="Engrenagens e buchas">
+          <div class="product__art"><span class="product__tag">Peças técnicas</span><svg aria-hidden="true"><use href="#p-engrenagem"/></svg></div>
+          <div class="product__body">
+            <h3>Engrenagens e buchas</h3>
+            <p>Componentes mecânicos em PETG, ABS ou nylon, com tolerâncias ajustadas ao seu conjunto.</p>
+            <div class="product__foot">
+              <span class="product__price">Sob consulta<small>conforme o projeto</small></span>
+              <button class="btn btn--ghost btn--sm" type="button" data-quote="Engrenagens e buchas">Orçamento</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product reveal" data-category="tecnicas" data-name="Gabaritos e dispositivos">
+          <div class="product__art"><span class="product__tag">Peças técnicas</span><svg aria-hidden="true"><use href="#p-gabarito"/></svg></div>
+          <div class="product__body">
+            <h3>Gabaritos e dispositivos</h3>
+            <p>Jigs, calibradores e suportes de bancada que aceleram a montagem e reduzem erro na linha.</p>
+            <div class="product__foot">
+              <span class="product__price">Sob consulta<small>conforme o projeto</small></span>
+              <button class="btn btn--ghost btn--sm" type="button" data-quote="Gabaritos e dispositivos">Orçamento</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product reveal" data-category="personalizados" data-name="Chaveiro personalizado">
+          <div class="product__art"><span class="product__tag">Personalizados</span><svg aria-hidden="true"><use href="#p-chaveiro"/></svg></div>
+          <div class="product__body">
+            <h3>Chaveiro personalizado</h3>
+            <p>Nome, logo ou ilustração em relevo, em duas cores. Ideal para lembrancinhas e eventos.</p>
+            <div class="product__foot">
+              <span class="product__price">R$ 12<small>a partir de</small></span>
+              <button class="btn btn--ghost btn--sm" type="button" data-quote="Chaveiro personalizado">Orçamento</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product reveal" data-category="personalizados" data-name="Brindes corporativos">
+          <div class="product__art"><span class="product__tag">Personalizados</span><svg aria-hidden="true"><use href="#p-brinde"/></svg></div>
+          <div class="product__body">
+            <h3>Brindes corporativos</h3>
+            <p>Kits com a identidade da sua empresa: troféus, porta-cartões, displays e embalagens.</p>
+            <div class="product__foot">
+              <span class="product__price">Sob consulta<small>a partir de 20 un.</small></span>
+              <button class="btn btn--ghost btn--sm" type="button" data-quote="Brindes corporativos">Orçamento</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product reveal" data-category="colecionaveis" data-name="Miniaturas e action figures">
+          <div class="product__art"><span class="product__tag">Colecionáveis</span><svg aria-hidden="true"><use href="#p-miniatura"/></svg></div>
+          <div class="product__body">
+            <h3>Miniaturas e figures</h3>
+            <p>Impressão em resina para máximo detalhe, com opção de acabamento lixado e pintado.</p>
+            <div class="product__foot">
+              <span class="product__price">R$ 69<small>a partir de</small></span>
+              <button class="btn btn--ghost btn--sm" type="button" data-quote="Miniaturas e figures">Orçamento</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product reveal" data-category="colecionaveis" data-name="Acessórios de RPG e board games">
+          <div class="product__art"><span class="product__tag">Colecionáveis</span><svg aria-hidden="true"><use href="#p-dado"/></svg></div>
+          <div class="product__body">
+            <h3>Acessórios para jogos</h3>
+            <p>Torres de dados, organizadores de componentes e insertos sob medida para a sua caixa.</p>
+            <div class="product__foot">
+              <span class="product__price">R$ 79<small>a partir de</small></span>
+              <button class="btn btn--ghost btn--sm" type="button" data-quote="Acessórios para jogos">Orçamento</button>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <p class="catalog__empty" id="catalogoVazio" hidden>Nenhum produto nesta categoria por enquanto. Fale com a gente — provavelmente conseguimos fazer.</p>
+    </div>
+  </section>
+
+  <!-- ============ PROCESSO ============ -->
+  <section class="section" id="processo">
+    <div class="container">
+      <div class="section__head section__head--center reveal">
+        <span class="eyebrow">Como funciona</span>
+        <h2>Quatro passos até a sua peça</h2>
+        <p class="lead">Um processo simples, com aprovação sua em cada etapa importante.</p>
+      </div>
+
+      <div class="grid steps">
+        <article class="step reveal">
+          <h3>Conte a ideia</h3>
+          <p>Envie o arquivo 3D, uma foto, um desenho ou apenas descreva o que precisa. Medidas ajudam, mas não são obrigatórias.</p>
+        </article>
+        <article class="step reveal">
+          <h3>Orçamento e prazo</h3>
+          <p>Analisamos a viabilidade, sugerimos o material ideal e enviamos valor e prazo antes de qualquer produção.</p>
+        </article>
+        <article class="step reveal">
+          <h3>Aprovação do modelo</h3>
+          <p>Quando há modelagem, você recebe a prévia em 3D para aprovar ou pedir ajustes — sem custo extra por revisão.</p>
+        </article>
+        <article class="step reveal">
+          <h3>Impressão e entrega</h3>
+          <p>Imprimimos, fazemos o acabamento, conferimos a peça e enviamos pelos Correios, transportadora ou entrega local.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ MATERIAIS ============ -->
+  <section class="section section--soft" id="materiais">
+    <div class="container">
+      <div class="section__head reveal">
+        <span class="eyebrow">Materiais</span>
+        <h2>O material certo para cada peça</h2>
+        <p class="lead">Cada projeto pede um comportamento diferente. Se ficar em dúvida, a gente indica a melhor opção.</p>
+      </div>
+
+      <div class="grid materials">
+        <article class="material reveal">
+          <h3>PLA</h3>
+          <span class="material__sub">Uso geral</span>
+          <p>Ótimo acabamento e enorme variedade de cores. Perfeito para decoração, brindes e protótipos visuais.</p>
+          <dl>
+            <dt>Resistência</dt><dd>Média</dd>
+            <dt>Temperatura</dt><dd>Até 55 °C</dd>
+            <dt>Uso externo</dt><dd>Não indicado</dd>
+          </dl>
+        </article>
+
+        <article class="material reveal">
+          <h3>PETG</h3>
+          <span class="material__sub">Resistente</span>
+          <p>Mais tenaz e menos quebradiço, com boa resistência à umidade. Indicado para peças funcionais do dia a dia.</p>
+          <dl>
+            <dt>Resistência</dt><dd>Alta</dd>
+            <dt>Temperatura</dt><dd>Até 75 °C</dd>
+            <dt>Uso externo</dt><dd>Sim</dd>
+          </dl>
+        </article>
+
+        <article class="material reveal">
+          <h3>ABS / ASA</h3>
+          <span class="material__sub">Técnico</span>
+          <p>Suporta calor e sol sem deformar nem amarelar. A escolha para peças automotivas e de uso externo contínuo.</p>
+          <dl>
+            <dt>Resistência</dt><dd>Alta</dd>
+            <dt>Temperatura</dt><dd>Até 95 °C</dd>
+            <dt>Uso externo</dt><dd>Sim (ASA)</dd>
+          </dl>
+        </article>
+
+        <article class="material reveal">
+          <h3>TPU flexível</h3>
+          <span class="material__sub">Borrachoso</span>
+          <p>Dobra, comprime e volta ao formato. Usado em vedações, capas de proteção, pés antiderrapantes e amortecedores.</p>
+          <dl>
+            <dt>Resistência</dt><dd>Flexível</dd>
+            <dt>Temperatura</dt><dd>Até 70 °C</dd>
+            <dt>Uso externo</dt><dd>Sim</dd>
+          </dl>
+        </article>
+
+        <article class="material reveal">
+          <h3>Resina</h3>
+          <span class="material__sub">Alta definição</span>
+          <p>Camadas muito finas para detalhes minúsculos. Ideal para miniaturas, joias, protótipos de precisão e moldes.</p>
+          <dl>
+            <dt>Resistência</dt><dd>Média</dd>
+            <dt>Detalhe</dt><dd>0,03 mm</dd>
+            <dt>Uso externo</dt><dd>Não indicado</dd>
+          </dl>
+        </article>
+
+        <article class="material reveal">
+          <h3>Fibra de carbono</h3>
+          <span class="material__sub">Engenharia</span>
+          <p>Compostos com fibra para rigidez e estabilidade dimensional em peças que não podem empenar.</p>
+          <dl>
+            <dt>Resistência</dt><dd>Muito alta</dd>
+            <dt>Temperatura</dt><dd>Até 100 °C</dd>
+            <dt>Uso externo</dt><dd>Sim</dd>
+          </dl>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ DIFERENCIAIS ============ -->
+  <section class="section dark-band" id="sobre">
+    <div class="container">
+      <div class="section__head reveal">
+        <span class="eyebrow">Por que a Five Lines</span>
+        <h2>Camada por camada, do jeito certo</h2>
+        <p class="lead">
+          Nosso nome vem das cinco linhas que formam a marca — e do princípio que seguimos:
+          uma peça boa é feita de muitas camadas bem executadas, sem atalho em nenhuma delas.
+        </p>
+      </div>
+
+      <div class="grid grid--3">
+        <article class="feature reveal">
+          <div class="feature__icon"><svg aria-hidden="true"><use href="#i-shield"/></svg></div>
+          <h3>Conferência peça por peça</h3>
+          <p>Antes do envio, cada item passa por acabamento e inspeção visual e dimensional. Se sair errado, refazemos.</p>
+        </article>
+        <article class="feature reveal">
+          <div class="feature__icon"><svg aria-hidden="true"><use href="#i-clock"/></svg></div>
+          <h3>Prazo combinado é prazo cumprido</h3>
+          <p>Você recebe uma data na hora do orçamento e acompanha o andamento da produção pelo WhatsApp.</p>
+        </article>
+        <article class="feature reveal">
+          <div class="feature__icon"><svg aria-hidden="true"><use href="#i-chat"/></svg></div>
+          <h3>Atendimento direto</h3>
+          <p>Você fala com quem imprime a sua peça — sem formulário sem resposta e sem intermediário.</p>
+        </article>
+        <article class="feature reveal">
+          <div class="feature__icon"><svg aria-hidden="true"><use href="#i-cube"/></svg></div>
+          <h3>Projeto incluso</h3>
+          <p>Não precisa chegar com arquivo pronto: modelamos a partir da sua ideia e ajustamos até ficar certo.</p>
+        </article>
+        <article class="feature reveal">
+          <div class="feature__icon"><svg aria-hidden="true"><use href="#i-layers"/></svg></div>
+          <h3>Da unidade ao lote</h3>
+          <p>Atendemos tanto uma peça única quanto produção recorrente, com o mesmo padrão de qualidade.</p>
+        </article>
+        <article class="feature reveal">
+          <div class="feature__icon"><svg aria-hidden="true"><use href="#i-truck"/></svg></div>
+          <h3>Envio para todo o Brasil</h3>
+          <p>Embalagem reforçada, código de rastreio e opção de retirada ou entrega local combinada.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="section" id="faq">
+    <div class="container">
+      <div class="section__head section__head--center reveal">
+        <span class="eyebrow">Dúvidas frequentes</span>
+        <h2>Perguntas que sempre chegam</h2>
+      </div>
+
+      <div class="faq reveal">
+        <details>
+          <summary>Preciso enviar um arquivo 3D pronto?</summary>
+          <p>Não. Se você tiver o arquivo (STL, OBJ, 3MF ou STEP), o processo fica mais rápido. Se não tiver, modelamos a peça a partir de fotos, desenhos, medidas ou da peça original.</p>
+        </details>
+        <details>
+          <summary>Qual é o prazo de produção?</summary>
+          <p>Depende do tamanho, da quantidade e do material. Peças pequenas costumam ficar prontas em poucos dias; lotes maiores e projetos com modelagem levam mais tempo. O prazo exato vai junto com o orçamento, antes de qualquer produção.</p>
+        </details>
+        <details>
+          <summary>Como o preço é calculado?</summary>
+          <p>Consideramos o volume de material, o tempo de impressão, o acabamento necessário e, quando houver, as horas de modelagem. Quantidades maiores reduzem o valor unitário.</p>
+        </details>
+        <details>
+          <summary>Existe pedido mínimo?</summary>
+          <p>Não para produtos do catálogo — imprimimos a partir de uma unidade. Para brindes corporativos personalizados, trabalhamos com lotes a partir de 20 peças para que o custo do projeto valha a pena.</p>
+        </details>
+        <details>
+          <summary>A peça aguenta sol, calor e uso pesado?</summary>
+          <p>Sim, desde que o material seja o certo. PLA não é indicado para o interior de um carro ou uso externo, mas PETG, ASA e compostos com fibra suportam bem essas condições. Conte onde a peça vai trabalhar e indicamos a melhor opção.</p>
+        </details>
+        <details>
+          <summary>Vocês fazem peças com direitos autorais de terceiros?</summary>
+          <p>Só reproduzimos modelos com licença para uso ou autorização do autor. Para personagens e marcas registradas, criamos alternativas originais ou trabalhamos com arquivos de uso comercial liberado.</p>
+        </details>
+        <details>
+          <summary>Como funciona o envio?</summary>
+          <p>Enviamos para todo o Brasil pelos Correios ou por transportadora, com código de rastreio. Na mesma cidade, também dá para combinar retirada ou entrega local.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTATO ============ -->
+  <section class="section section--soft" id="contato">
+    <div class="container contact">
+      <div class="reveal">
+        <span class="eyebrow">Orçamento</span>
+        <h2>Conte o que você precisa</h2>
+        <p class="lead">
+          Preencha os campos e o pedido é aberto direto no WhatsApp, já com todas as informações
+          organizadas. Prefere e-mail? Também dá.
+        </p>
+
+        <ul class="contact__list">
+          <li class="contact__item">
+            <svg aria-hidden="true"><use href="#i-whats"/></svg>
+            <div>
+              <strong>WhatsApp</strong>
+              <a href="#" data-contact="whatsapp">Carregando…</a>
+            </div>
+          </li>
+          <li class="contact__item">
+            <svg aria-hidden="true"><use href="#i-mail"/></svg>
+            <div>
+              <strong>E-mail</strong>
+              <a href="#" data-contact="email">Carregando…</a>
+            </div>
+          </li>
+          <li class="contact__item">
+            <svg aria-hidden="true"><use href="#i-instagram"/></svg>
+            <div>
+              <strong>Instagram</strong>
+              <a href="#" data-contact="instagram" target="_blank" rel="noopener">Carregando…</a>
+            </div>
+          </li>
+          <li class="contact__item">
+            <svg aria-hidden="true"><use href="#i-pin"/></svg>
+            <div>
+              <strong>Atendimento</strong>
+              <span data-contact="local">Todo o Brasil, com envio rastreado</span>
+            </div>
+          </li>
+          <li class="contact__item">
+            <svg aria-hidden="true"><use href="#i-clock"/></svg>
+            <div>
+              <strong>Horário</strong>
+              <span data-contact="horario">Segunda a sexta, das 9h às 18h</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <form class="form reveal" id="formOrcamento" novalidate>
+        <div class="form__row">
+          <div class="field">
+            <label for="nome">Nome</label>
+            <input type="text" id="nome" name="nome" autocomplete="name" placeholder="Como devemos te chamar" required>
+          </div>
+          <div class="field">
+            <label for="contatoCampo">WhatsApp ou e-mail</label>
+            <input type="text" id="contatoCampo" name="contato" autocomplete="tel" placeholder="(00) 00000-0000" required>
+          </div>
+        </div>
+
+        <div class="form__row">
+          <div class="field">
+            <label for="servico">O que você precisa</label>
+            <select id="servico" name="servico">
+              <option>Produto do catálogo</option>
+              <option>Peça sob medida</option>
+              <option>Peça de reposição</option>
+              <option>Protótipo</option>
+              <option>Brindes personalizados</option>
+              <option>Modelagem 3D</option>
+              <option>Ainda não sei</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="quantidade">Quantidade</label>
+            <select id="quantidade" name="quantidade">
+              <option>1 unidade</option>
+              <option>2 a 10 unidades</option>
+              <option>11 a 50 unidades</option>
+              <option>Mais de 50 unidades</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form__row">
+          <div class="field">
+            <label for="material">Material preferido</label>
+            <select id="material" name="material">
+              <option>Quero uma indicação</option>
+              <option>PLA</option>
+              <option>PETG</option>
+              <option>ABS / ASA</option>
+              <option>TPU flexível</option>
+              <option>Resina</option>
+              <option>Fibra de carbono</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="prazo">Prazo desejado</label>
+            <select id="prazo" name="prazo">
+              <option>Sem pressa</option>
+              <option>Até 7 dias</option>
+              <option>Até 15 dias</option>
+              <option>É urgente</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="descricao">Descrição do projeto</label>
+          <textarea id="descricao" name="descricao" placeholder="Descreva a peça, o tamanho aproximado, onde ela vai ser usada e se você já tem o arquivo 3D." required></textarea>
+          <span class="field__hint">Tem foto, desenho ou arquivo? É só anexar depois, na conversa do WhatsApp.</span>
+        </div>
+
+        <button class="btn btn--primary btn--block" type="submit">
+          <svg width="20" height="20" aria-hidden="true"><use href="#i-whats"/></svg>
+          Enviar pedido pelo WhatsApp
+        </button>
+        <p class="form__note">Prefere e-mail? <a href="#" id="linkEmail">Enviar por e-mail</a></p>
+        <p class="form__feedback" id="formFeedback" hidden role="status"></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- ============ CTA FINAL ============ -->
+  <section class="section dark-band cta-band">
+    <div class="container reveal">
+      <h2>Tem uma ideia parada esperando virar peça?</h2>
+      <p class="lead">Manda a descrição, uma foto ou o arquivo. Respondemos com material sugerido, prazo e valor.</p>
+      <div class="btn-row">
+        <a class="btn btn--primary" href="#contato">Pedir orçamento</a>
+        <a class="btn btn--light" href="#produtos">Explorar o catálogo</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ============ RODAPÉ ============ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <img class="footer__logo" src="assets/img/logo-light.png" alt="Five Lines" width="720" height="235">
+        <p>Impressão 3D sob medida: produtos personalizados, peças técnicas, protótipos e produção em pequena escala.</p>
+        <div class="footer__social">
+          <a href="#" data-contact="instagram" target="_blank" rel="noopener" aria-label="Instagram da Five Lines"><svg aria-hidden="true"><use href="#i-instagram"/></svg></a>
+          <a href="#" data-contact="whatsapp" aria-label="WhatsApp da Five Lines"><svg aria-hidden="true"><use href="#i-whats"/></svg></a>
+          <a href="#" data-contact="linkedin" target="_blank" rel="noopener" aria-label="LinkedIn da Five Lines"><svg aria-hidden="true"><use href="#i-linkedin"/></svg></a>
+        </div>
+      </div>
+
+      <div>
+        <h4>Navegação</h4>
+        <ul>
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#produtos">Produtos</a></li>
+          <li><a href="#processo">Como funciona</a></li>
+          <li><a href="#materiais">Materiais</a></li>
+          <li><a href="#faq">Dúvidas</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Serviços</h4>
+        <ul>
+          <li><a href="#servicos">Impressão sob demanda</a></li>
+          <li><a href="#servicos">Modelagem 3D</a></li>
+          <li><a href="#servicos">Prototipagem</a></li>
+          <li><a href="#produtos">Peças de reposição</a></li>
+          <li><a href="#produtos">Brindes corporativos</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Contato</h4>
+        <ul>
+          <li><a href="#" data-contact="whatsapp">Carregando…</a></li>
+          <li><a href="#" data-contact="email">Carregando…</a></li>
+          <li><span data-contact="horario">Segunda a sexta, das 9h às 18h</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <span>&copy; <span id="ano">2026</span> Five Lines. Todos os direitos reservados.</span>
+      <span>Feito camada por camada.</span>
+    </div>
+  </div>
+</footer>
+
+<a class="whats-float" href="#" data-contact="whatsapp" aria-label="Falar no WhatsApp">
+  <svg aria-hidden="true"><use href="#i-whats"/></svg>
+  <span>Falar no WhatsApp</span>
+</a>
+
+<script src="assets/js/main.js" defer></script>
+</body>
+</html>

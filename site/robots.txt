@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://fivelines.com.br/sitemap.xml
