@@ -16,7 +16,53 @@
   const $ = (s, ctx = document) => ctx.querySelector(s);
   const $$ = (s, ctx = document) => Array.from(ctx.querySelectorAll(s));
 
-  const CHAVE_PEDIDO = 'fivelines:pedido';
+  // O pedido é guardado por idioma, para não misturar catálogos
+  const CHAVE_PEDIDO = 'fivelines:pedido:' + (loja.idioma || 'pt');
+
+  /* Textos da interface. Para outro idioma, defina "textos" no arquivo
+     de dados (veja products.js da versão em inglês). */
+  const PADROES = {
+    tudo: 'Tudo',
+    nadaEncontrado: 'Não encontramos esse item por aqui.<br>Fale com a gente no WhatsApp — provavelmente conseguimos fazer.',
+    apartirDe: 'a partir de',
+    indisponivel: 'Indisponível',
+    indisponivelAgora: 'Indisponível no momento',
+    sobConsulta: 'Sob consulta',
+    opcional: 'opcional',
+    erroTexto: 'preencha',
+    erroEscolha: 'escolha uma opção',
+    prazo: 'Prazo:',
+    adicionar: 'Adicionar ao pedido',
+    adicionado: 'Adicionado ao pedido',
+    diminuir: 'Diminuir quantidade',
+    aumentar: 'Aumentar quantidade',
+    umItemNoPedido: '1 item no pedido',
+    itensNoPedido: '{n} itens no pedido',
+    maisSobConsulta: '+ itens sob consulta',
+    valoresSobConsulta: 'Valores sob consulta',
+    seuPedido: 'Seu pedido',
+    umItem: '1 item',
+    nItens: '{n} itens',
+    pedidoVazio: 'Seu pedido está vazio.<br>Toque em um produto para começar.',
+    verProdutos: 'Ver produtos',
+    remover: 'remover',
+    totalEstimado: 'Total estimado',
+    totalParcial: 'Total parcial',
+    total: 'Total',
+    orcamentoPeloWhats: 'enviamos o orçamento no WhatsApp',
+    limpar: 'Limpar',
+    enviarNoWhats: 'Enviar no WhatsApp',
+    unidades: 'un.',
+    unidade: 'un.',
+    cada: 'cada',
+    valorSobConsulta: 'Valor sob consulta',
+    somaSobConsulta: '(mais os itens sob consulta)',
+    linkCopiado: 'Link copiado',
+    tituloPagina: '{loja} — catálogo'
+  };
+  const T = Object.assign({}, PADROES, dados.textos || {});
+  const txt = (chave, valores) =>
+    String(T[chave] || '').replace(/\{(\w+)\}/g, (_, k) => (valores && valores[k] != null ? valores[k] : ''));
   // Desenho usado enquanto o produto não tem foto, por categoria
   const DESENHOS = {
     decoracao: 'd-vaso',
@@ -42,12 +88,13 @@
   const semAcento = (t) => String(t || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
 
   const dinheiro = (v) =>
-    (loja.moeda || 'R$') + ' ' + Number(v).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    (loja.moeda || 'R$') + ' ' +
+    Number(v).toLocaleString(loja.locale || 'pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 
   const precoDe = (p) => {
-    if (!loja.mostrarPrecos) return 'Sob consulta';
+    if (!loja.mostrarPrecos) return T.sobConsulta;
     if (typeof p.preco === 'number') return dinheiro(p.preco);
-    return p.precoTexto || 'Sob consulta';
+    return p.precoTexto || T.sobConsulta;
   };
 
   const temValor = (p) => loja.mostrarPrecos && typeof p.preco === 'number';
@@ -75,7 +122,7 @@
   /* ---------- montagem da vitrine ---------- */
   function montarFiltros() {
     const alvo = $('#chips');
-    const cats = [{ id: 'todos', nome: 'Tudo' }].concat(dados.categorias || []);
+    const cats = [{ id: 'todos', nome: T.tudo }].concat(dados.categorias || []);
     alvo.innerHTML = cats.map((c, i) =>
       `<button class="chip" type="button" data-cat="${esc(c.id)}" aria-pressed="${i === 0}">${esc(c.nome)}</button>`
     ).join('');
@@ -103,16 +150,16 @@
     const grade = $('#grade');
 
     if (!lista.length) {
-      grade.innerHTML = `<p class="vazio">Não encontramos esse item por aqui.<br>Fale com a gente no WhatsApp — provavelmente conseguimos fazer.</p>`;
+      grade.innerHTML = `<p class="vazio">${T.nadaEncontrado}</p>`;
       return;
     }
 
     grade.innerHTML = lista.map((p) => {
       const fora = p.disponivel === false;
       const etiqueta = fora
-        ? '<span class="etiqueta etiqueta--fora">Indisponível</span>'
+        ? `<span class="etiqueta etiqueta--fora">${esc(T.indisponivel)}</span>`
         : (p.etiqueta ? `<span class="etiqueta">${esc(p.etiqueta)}</span>` : '');
-      const apartir = temValor(p) && (p.opcoes || []).length ? '<small>a partir de</small>' : '';
+      const apartir = temValor(p) && (p.opcoes || []).length ? `<small>${esc(T.apartirDe)}</small>` : '';
 
       return `
         <button class="card${fora ? ' card--fora' : ''}" type="button" data-id="${esc(p.id)}">
@@ -141,19 +188,19 @@
     const prazo = p.prazo || loja.prazoPadrao;
     const opcoes = (p.opcoes || []).map((op, i) => {
       const valores = valoresDaOpcao(op);
-      const obrig = op.obrigatoria ? '' : '<em>opcional</em>';
+      const obrig = op.obrigatoria ? '' : `<em>${esc(T.opcional)}</em>`;
 
       if (op.texto) {
         return `
           <div class="opcao" data-opcao="${i}">
-            <div class="opcao__titulo">${esc(op.nome)} ${obrig}<span class="opcao__erro" hidden>preencha</span></div>
+            <div class="opcao__titulo">${esc(op.nome)} ${obrig}<span class="opcao__erro" hidden>${esc(T.erroTexto)}</span></div>
             <input type="text" data-campo="${i}" placeholder="${esc(op.dica || '')}" maxlength="80">
           </div>`;
       }
 
       return `
         <div class="opcao" data-opcao="${i}">
-          <div class="opcao__titulo">${esc(op.nome)} ${obrig}<span class="opcao__erro" hidden>escolha uma opção</span></div>
+          <div class="opcao__titulo">${esc(op.nome)} ${obrig}<span class="opcao__erro" hidden>${esc(T.erroEscolha)}</span></div>
           <div class="valores">
             ${valores.map((v) => `<button class="valor" type="button" data-i="${i}" data-v="${esc(v)}" aria-pressed="false">${esc(v)}</button>`).join('')}
           </div>
@@ -163,19 +210,19 @@
     $('#painelConteudo').innerHTML = `
       <div class="produto__foto">${arteDe(p)}</div>
       <p class="produto__desc">${esc(p.detalhes || p.descricao || '')}</p>
-      ${prazo ? `<p class="produto__prazo"><svg aria-hidden="true"><use href="#i-relogio"></use></svg> Prazo: ${esc(prazo)}</p>` : ''}
+      ${prazo ? `<p class="produto__prazo"><svg aria-hidden="true"><use href="#i-relogio"></use></svg> ${esc(T.prazo)} ${esc(prazo)}</p>` : ''}
       ${opcoes}
     `;
 
     $('#painelPe').innerHTML = p.disponivel === false
-      ? `<button class="btn btn--simples btn--cheio" type="button" disabled>Indisponível no momento</button>`
+      ? `<button class="btn btn--simples btn--cheio" type="button" disabled>${esc(T.indisponivelAgora)}</button>`
       : `
         <div class="qtd">
-          <button type="button" id="menos" aria-label="Diminuir quantidade">−</button>
+          <button type="button" id="menos" aria-label="${esc(T.diminuir)}">−</button>
           <span id="qtdValor">1</span>
-          <button type="button" id="mais" aria-label="Aumentar quantidade">+</button>
+          <button type="button" id="mais" aria-label="${esc(T.aumentar)}">+</button>
         </div>
-        <button class="btn btn--marca btn--cheio" type="button" id="addPedido">Adicionar ao pedido</button>`;
+        <button class="btn btn--marca btn--cheio" type="button" id="addPedido">${esc(T.adicionar)}</button>`;
 
     $('#painel').classList.add('aberto');
     document.body.classList.add('travado');
@@ -281,7 +328,7 @@
     salvarPedido();
     fecharPainel();
     atualizarBarra();
-    avisar('Adicionado ao pedido');
+    avisar(T.adicionado);
   }
 
   /* ---------- pedido ---------- */
@@ -315,20 +362,20 @@
 
     document.body.classList.remove('sem-barra');
     barra.classList.add('visivel');
-    $('#barraQtd').textContent = n === 1 ? '1 item no pedido' : n + ' itens no pedido';
+    $('#barraQtd').textContent = n === 1 ? T.umItemNoPedido : txt('itensNoPedido', { n: n });
     $('#barraTotal').textContent = loja.mostrarPrecos
-      ? (temSobConsulta() ? dinheiro(totalValor()) + ' + itens sob consulta' : dinheiro(totalValor()))
-      : 'Valores sob consulta';
+      ? (temSobConsulta() ? dinheiro(totalValor()) + ' ' + T.maisSobConsulta : dinheiro(totalValor()))
+      : T.valoresSobConsulta;
   }
 
   function abrirPedido() {
     $('#copiado').classList.remove('visivel');   // evita o aviso sobre o resumo
-    $('#painelTitulo').textContent = 'Seu pedido';
-    $('#painelSub').textContent = totalItens() === 1 ? '1 item' : totalItens() + ' itens';
+    $('#painelTitulo').textContent = T.seuPedido;
+    $('#painelSub').textContent = totalItens() === 1 ? T.umItem : txt('nItens', { n: totalItens() });
 
     if (!pedido.length) {
-      $('#painelConteudo').innerHTML = '<p class="aviso-vazio">Seu pedido está vazio.<br>Toque em um produto para começar.</p>';
-      $('#painelPe').innerHTML = '<button class="btn btn--simples btn--cheio" type="button" id="voltarCatalogo">Ver produtos</button>';
+      $('#painelConteudo').innerHTML = `<p class="aviso-vazio">${T.pedidoVazio}</p>`;
+      $('#painelPe').innerHTML = `<button class="btn btn--simples btn--cheio" type="button" id="voltarCatalogo">${esc(T.verProdutos)}</button>`;
     } else {
       const itens = pedido.map((it, i) => `
         <div class="item">
@@ -340,22 +387,22 @@
             ${it.opcoes.length ? `<span class="item__opcoes">${esc(it.opcoes.map((o) => o.nome + ': ' + o.valor).join(' · '))}</span>` : ''}
             <span class="item__linha">
               <span class="item__preco">${it.qtd} × ${esc(it.preco != null ? dinheiro(it.preco) : it.precoTexto)}</span>
-              <button class="item__remover" type="button" data-remover="${i}">remover</button>
+              <button class="item__remover" type="button" data-remover="${i}">${esc(T.remover)}</button>
             </span>
           </span>
         </div>`).join('');
 
       const total = loja.mostrarPrecos
-        ? `<div class="total"><span>Total ${temSobConsulta() ? 'parcial' : 'estimado'}</span>
-             <span>${dinheiro(totalValor())}${temSobConsulta() ? '<small>+ itens sob consulta</small>' : ''}</span>
+        ? `<div class="total"><span>${esc(temSobConsulta() ? T.totalParcial : T.totalEstimado)}</span>
+             <span>${dinheiro(totalValor())}${temSobConsulta() ? `<small>${esc(T.maisSobConsulta)}</small>` : ''}</span>
            </div>`
-        : '<div class="total"><span>Total</span><span>Sob consulta<small>enviamos o orçamento no WhatsApp</small></span></div>';
+        : `<div class="total"><span>${esc(T.total)}</span><span>${esc(T.sobConsulta)}<small>${esc(T.orcamentoPeloWhats)}</small></span></div>`;
 
       $('#painelConteudo').innerHTML = itens + total;
       $('#painelPe').innerHTML = `
-        <button class="btn btn--simples" type="button" id="limparPedido">Limpar</button>
+        <button class="btn btn--simples" type="button" id="limparPedido">${esc(T.limpar)}</button>
         <a class="btn btn--whats btn--cheio" id="enviarPedido" href="#" target="_blank" rel="noopener">
-          <svg aria-hidden="true"><use href="#i-whats"></use></svg> Enviar no WhatsApp
+          <svg aria-hidden="true"><use href="#i-whats"></use></svg> ${esc(T.enviarNoWhats)}
         </a>`;
       $('#enviarPedido').href = linkWhats(mensagemDoPedido());
     }
@@ -368,19 +415,19 @@
     const linhas = [loja.saudacao || 'Olá! Gostaria de fazer um pedido.', ''];
 
     pedido.forEach((it, i) => {
-      linhas.push(`${i + 1}) ${it.nome} — ${it.qtd} un.`);
+      linhas.push(`${i + 1}) ${it.nome} — ${it.qtd} ${it.qtd === 1 ? (T.unidade || T.unidades) : T.unidades}`);
       it.opcoes.forEach((o) => linhas.push(`   • ${o.nome}: ${o.valor}`));
       if (it.preco != null) {
-        linhas.push(`   ${dinheiro(it.preco)} cada` + (it.qtd > 1 ? ` — ${dinheiro(it.preco * it.qtd)}` : ''));
+        linhas.push(`   ${dinheiro(it.preco)} ${T.cada}` + (it.qtd > 1 ? ` — ${dinheiro(it.preco * it.qtd)}` : ''));
       } else {
-        linhas.push('   Valor sob consulta');
+        linhas.push('   ' + T.valorSobConsulta);
       }
       linhas.push('');
     });
 
     if (loja.mostrarPrecos && totalValor() > 0) {
-      linhas.push(`Total ${temSobConsulta() ? 'parcial' : 'estimado'}: ${dinheiro(totalValor())}`);
-      if (temSobConsulta()) linhas.push('(mais os itens sob consulta)');
+      linhas.push(`${temSobConsulta() ? T.totalParcial : T.totalEstimado}: ${dinheiro(totalValor())}`);
+      if (temSobConsulta()) linhas.push(T.somaSobConsulta);
     }
 
     return linhas.join('\n');
@@ -443,14 +490,14 @@
   function ligarCompartilhar() {
     $('#compartilhar').addEventListener('click', async () => {
       const url = location.href.split('?')[0];
-      const titulo = `${loja.nome} — catálogo`;
+      const titulo = txt('tituloPagina', { loja: loja.nome });
 
       if (navigator.share) {
         try { await navigator.share({ title: titulo, text: loja.slogan || '', url }); return; } catch (e) { return; }
       }
       try {
         await navigator.clipboard.writeText(url);
-        avisar('Link copiado');
+        avisar(T.linkCopiado);
       } catch (e) {
         avisar(url);
       }
@@ -459,7 +506,7 @@
 
   /* ---------- ligar tudo ---------- */
   function preencherTextos() {
-    document.title = `${loja.nome || 'Catálogo'} — catálogo`;
+    document.title = txt('tituloPagina', { loja: loja.nome || '' });
     $('#lojaNome').textContent = loja.nome || '';
     $('#lojaSlogan').textContent = loja.slogan || '';
 

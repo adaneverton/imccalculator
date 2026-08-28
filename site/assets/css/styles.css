@@ -212,6 +212,21 @@ ul { margin: 0; padding: 0; list-style: none; }
 .nav a:hover, .nav a:focus-visible { color: var(--teal-700); background: var(--bg-soft); text-decoration: none; }
 
 .header__cta { display: inline-flex; }
+
+.nav__lang {
+  display: inline-flex;
+  align-items: center;
+  padding: .5rem .7rem;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  color: var(--ink-soft);
+  font-family: var(--font-display);
+  font-size: .8rem;
+  font-weight: 700;
+  letter-spacing: .05em;
+}
+.nav__lang:hover { border-color: var(--teal-600); color: var(--teal-700); text-decoration: none; }
+@media (max-width: 940px) { .nav__lang { padding: .45rem .6rem; font-size: .76rem; } }
 .nav > .btn { display: none; }   /* CTA duplicado: só aparece no menu mobile */
 
 .nav-toggle {

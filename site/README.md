@@ -92,11 +92,37 @@ O site é estático, então qualquer hospedagem serve.
 
 Depois de publicar, aponte o domínio para a hospedagem e ative o HTTPS.
 
+## Versão em inglês
+
+O site tem duas versões, com o mesmo visual e os mesmos arquivos de estilo:
+
+- `index.html` — português (`/`)
+- `en/index.html` — inglês (`/en/`)
+- `catalogo/` — catálogo em português (`/catalogo/`)
+- `en/catalog/` — catálogo em inglês (`/en/catalog/`)
+
+O botão **PT / EN** no menu troca de idioma, e as tags `hreflang` avisam os
+buscadores que as duas páginas são a mesma coisa em idiomas diferentes.
+
+Ao editar um texto, lembre de editar o equivalente na outra versão. Os dados de
+contato são compartilhados (ficam só em `assets/js/main.js`); dentro do
+`SITE_CONFIG`, os campos `local` e `horario` têm um texto para cada idioma:
+
+```js
+local: {
+  pt: 'Todo o Brasil, com envio rastreado',
+  en: 'All of Brazil, with tracked shipping'
+},
+```
+
 ## Estrutura
 
 ```
 site/
-├── index.html          página única, com todas as seções
+├── index.html          página única, em português
+├── en/index.html       a mesma página, em inglês
+├── catalogo/           catálogo (português)
+├── en/catalog/         catálogo (inglês)
 ├── site.webmanifest    ícones e nome para instalação como app
 ├── robots.txt
 ├── sitemap.xml

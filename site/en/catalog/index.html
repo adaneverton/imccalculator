@@ -1,30 +1,30 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Five Lines — catálogo</title>
-<meta name="description" content="Catálogo de produtos impressos em 3D. Escolha, monte seu pedido e envie direto no WhatsApp.">
+<title>Five Lines — catalogue</title>
+<meta name="description" content="Catalogue of 3D printed products. Pick what you need, build your order and send it straight to WhatsApp.">
 <meta name="theme-color" content="#011e5a">
 <meta name="robots" content="index, follow">
 
-<!-- Compartilhamento em redes e WhatsApp -->
+<!-- Sharing on social networks and WhatsApp -->
 <meta property="og:type" content="website">
-<meta property="og:locale" content="pt_BR">
-<meta property="og:title" content="Five Lines — catálogo">
-<meta property="og:description" content="Escolha os produtos, monte seu pedido e envie direto no WhatsApp.">
-<meta property="og:image" content="../assets/img/logo.png">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="Five Lines — catalogue">
+<meta property="og:description" content="Pick the products, build your order and send it straight to WhatsApp.">
+<meta property="og:image" content="../../assets/img/logo.png">
 
-<link rel="icon" href="../favicon.ico" sizes="any">
-<link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
-<link rel="stylesheet" href="catalogo.css">
-<link rel="alternate" hreflang="pt-BR" href="./">
-<link rel="alternate" hreflang="en" href="../en/catalog/">
-<!-- Sem fontes, scripts, pixels ou rastreadores de terceiros. -->
+<link rel="icon" href="../../favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="../../assets/img/apple-touch-icon.png">
+<link rel="stylesheet" href="../../catalogo/catalogo.css">
+<!-- No third-party fonts, scripts, pixels or trackers. -->
+<link rel="alternate" hreflang="pt-BR" href="../../catalogo/">
+<link rel="alternate" hreflang="en" href="./">
 </head>
 <body class="sem-barra">
 
-<!-- Ícones e desenhos usados quando o produto ainda não tem foto -->
+<!-- Icons and drawings used while a product has no photo -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
   <symbol id="i-whats" viewBox="0 0 24 24" fill="currentColor">
     <path d="M17.5 14.4c-.3-.2-1.7-.8-1.9-.9-.3-.1-.5-.2-.6.2-.2.3-.7.9-.8 1-.2.2-.3.2-.6.1s-1.2-.5-2.3-1.4c-.9-.8-1.4-1.7-1.6-2s0-.5.1-.6l.5-.5c.1-.2.2-.3.3-.5s0-.4 0-.5-.6-1.5-.9-2.1c-.2-.5-.5-.4-.6-.5h-.5c-.2 0-.5.1-.7.3-.3.3-1 .9-1 2.3s1 2.7 1.2 2.9c.1.2 2 3.1 5 4.3.7.3 1.2.5 1.7.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3zM12 2.2A9.8 9.8 0 0 0 3.6 17l-1.4 5.1 5.2-1.4A9.8 9.8 0 1 0 12 2.2zm0 17.9c-1.5 0-2.9-.4-4.1-1.1l-.3-.2-3.1.8.8-3-.2-.3a8.1 8.1 0 1 1 6.9 3.8z"/>
@@ -55,7 +55,7 @@
     <path d="M12 2.8 20 6v6c0 4.6-3.3 7.9-8 9.2C7.3 19.9 4 16.6 4 12V6z"/><path d="m8.8 12 2.2 2.2 4.2-4.4"/>
   </symbol>
 
-  <!-- desenhos genéricos (usados enquanto não há foto do produto) -->
+  <!-- generic drawings (used while a product has no photo) -->
   <symbol id="d-vaso" viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
     <path d="M42 24h36c-6 12-8 22-8 32s4 20 10 30c4 7-2 14-10 14H50c-8 0-14-7-10-14 6-10 10-20 10-30s-2-20-8-32z"/>
     <path d="M44 46h32M44 62h34M46 80h30" opacity=".5"/>
@@ -76,23 +76,23 @@
   </symbol>
 </svg>
 
-<!-- ============ TOPO ============ -->
+<!-- ============ HEADER ============ -->
 <header class="topo">
   <div class="wrap topo__inner">
     <div class="topo__marca">
-      <img class="topo__logo" src="../assets/img/logo-light.png" alt="Five Lines" width="720" height="235">
+      <img class="topo__logo" src="../../assets/img/logo-light.png" alt="Five Lines" width="720" height="235">
       <h1 class="sr-only" id="lojaNome">Five Lines</h1>
       <p id="lojaSlogan">Impressão 3D sob medida</p>
     </div>
     <div class="topo__acoes">
-      <a class="icone-btn icone-btn--txt" href="../en/catalog/" hreflang="en" aria-label="View in English">EN</a>
+      <a class="icone-btn icone-btn--txt" href="../../catalogo/" hreflang="pt-BR" aria-label="Ver em português">PT</a>
       <a class="icone-btn" id="linkInsta" href="#" target="_blank" rel="noopener" aria-label="Instagram">
         <svg aria-hidden="true"><use href="#i-instagram"></use></svg>
       </a>
-      <button class="icone-btn" id="compartilhar" type="button" aria-label="Compartilhar catálogo">
+      <button class="icone-btn" id="compartilhar" type="button" aria-label="Share catalogue">
         <svg aria-hidden="true"><use href="#i-compartilhar"></use></svg>
       </button>
-      <a class="icone-btn" data-whats href="#" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+      <a class="icone-btn" data-whats href="#" target="_blank" rel="noopener" aria-label="Message us on WhatsApp">
         <svg aria-hidden="true"><use href="#i-whats"></use></svg>
       </a>
     </div>
@@ -104,39 +104,39 @@
   </div>
 </header>
 
-<!-- ============ BUSCA E FILTROS ============ -->
+<!-- ============ SEARCH AND FILTERS ============ -->
 <div class="barra-busca">
   <div class="wrap">
     <div class="busca">
       <svg aria-hidden="true"><use href="#i-busca"></use></svg>
-      <label class="sr-only" for="campoBusca">Buscar produto</label>
-      <input type="search" id="campoBusca" placeholder="Buscar no catálogo" autocomplete="off">
-      <button class="busca__limpar" id="limparBusca" type="button" aria-label="Limpar busca">
+      <label class="sr-only" for="campoBusca">Search products</label>
+      <input type="search" id="campoBusca" placeholder="Search the catalogue" autocomplete="off">
+      <button class="busca__limpar" id="limparBusca" type="button" aria-label="Clear search">
         <svg width="14" height="14" aria-hidden="true"><use href="#i-x"></use></svg>
       </button>
     </div>
-    <div class="chips" id="chips" role="group" aria-label="Filtrar por categoria"></div>
+    <div class="chips" id="chips" role="group" aria-label="Filter by category"></div>
   </div>
 </div>
 
-<!-- ============ PRODUTOS ============ -->
+<!-- ============ PRODUCTS ============ -->
 <main class="wrap">
-  <h2 class="sr-only">Produtos</h2>
+  <h2 class="sr-only">Products</h2>
   <div class="grade" id="grade"></div>
 
   <noscript>
     <p class="vazio">
-      Para ver o catálogo é preciso ativar o JavaScript no navegador.<br>
-      Se preferir, chame a gente no WhatsApp que enviamos as fotos e os preços.
+      The catalogue needs JavaScript enabled in your browser.<br>
+      If you prefer, message us on WhatsApp and we will send photos and prices.
     </p>
   </noscript>
 </main>
 
-<!-- ============ RODAPÉ ============ -->
+<!-- ============ FOOTER ============ -->
 <footer class="rodape">
   <div class="wrap">
     <div class="rodape__linhas">
-      <div><svg aria-hidden="true"><use href="#i-relogio"></use></svg> <span>Prazo médio de produção: <span id="pePrazo2"></span></span></div>
+      <div><svg aria-hidden="true"><use href="#i-relogio"></use></svg> <span>Typical lead time: <span id="pePrazo2"></span></span></div>
       <div><svg aria-hidden="true"><use href="#i-caminhao"></use></svg> <span id="peEntrega2"></span></div>
       <div><svg aria-hidden="true"><use href="#i-cartao"></use></svg> <span id="pePagamento"></span></div>
     </div>
@@ -147,29 +147,29 @@
       <span>&copy; <span id="peAno">2026</span> <span id="peNome">Five Lines</span></span>
       <span class="privacidade">
         <svg aria-hidden="true"><use href="#i-escudo"></use></svg>
-        Sem cookies e sem rastreadores
+        No cookies, no trackers
       </span>
     </div>
   </div>
 </footer>
 
-<!-- ============ BARRA DO PEDIDO ============ -->
+<!-- ============ ORDER BAR ============ -->
 <div class="pedido-barra" id="pedidoBarra">
   <div class="pedido-barra__info">
-    <strong id="barraQtd">0 itens</strong>
+    <strong id="barraQtd">0 items</strong>
     <span id="barraTotal"></span>
   </div>
-  <button class="btn btn--marca" id="verPedido" type="button">Ver pedido</button>
+  <button class="btn btn--marca" id="verPedido" type="button">View order</button>
 </div>
 
-<!-- ============ PAINEL (produto e pedido) ============ -->
+<!-- ============ PANEL (product and order) ============ -->
 <div class="painel" id="painel" role="dialog" aria-modal="true" aria-labelledby="painelTitulo">
   <div class="painel__fundo" id="painelFundo"></div>
   <div class="painel__caixa">
     <div class="painel__topo">
       <h2 id="painelTitulo"></h2>
       <p id="painelSub"></p>
-      <button class="painel__fechar" id="painelFechar" type="button" aria-label="Fechar">
+      <button class="painel__fechar" id="painelFechar" type="button" aria-label="Close">
         <svg aria-hidden="true"><use href="#i-x"></use></svg>
       </button>
     </div>
@@ -180,7 +180,7 @@
 
 <div class="copiado" id="copiado" role="status" aria-live="polite"></div>
 
-<script src="produtos.js"></script>
-<script src="catalogo.js"></script>
+<script src="products.js"></script>
+<script src="../../catalogo/catalogo.js"></script>
 </body>
 </html>

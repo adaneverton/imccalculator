@@ -133,13 +133,38 @@ sem cookies e sem dados pessoais (Plausible, Umami ou GoatCounter), que respeita
 a LGPD melhor que o Google Analytics. Nesse caso, uma linha de script no
 `index.html` resolve.
 
+## Versão em inglês
+
+O catálogo em inglês fica em `../en/catalog/` e usa **os mesmos** `catalogo.css`
+e `catalogo.js` — só muda o arquivo de dados, `products.js`, que traz os produtos
+traduzidos e um bloco `textos` com todas as frases da interface:
+
+```js
+textos: {
+  adicionar: 'Add to order',
+  enviarNoWhats: 'Send on WhatsApp',
+  ...
+}
+```
+
+Se você criar um produto aqui, crie o equivalente lá (mesmo `id`) para os dois
+catálogos ficarem iguais. O botão **PT / EN** no topo troca de idioma, e cada
+idioma guarda o pedido separadamente no navegador.
+
+Para um terceiro idioma, copie a pasta `en/catalog/`, traduza `products.js`
+(produtos + bloco `textos`) e ajuste `idioma` e `locale`.
+
 ## Arquivos
 
 ```
 catalogo/
-├── index.html      estrutura da página (mexer só se mudar o layout)
-├── produtos.js     ← seus produtos e dados da loja
-├── catalogo.css    aparência
-├── catalogo.js     funcionamento (busca, filtro, pedido, WhatsApp)
-└── fotos/          fotos dos produtos
+├── index.html      estrutura da página em português
+├── produtos.js     ← seus produtos e dados da loja (português)
+├── catalogo.css    aparência (usado pelos dois idiomas)
+├── catalogo.js     funcionamento (usado pelos dois idiomas)
+└── fotos/          fotos dos produtos (usadas pelos dois idiomas)
+
+en/catalog/
+├── index.html      estrutura da página em inglês
+└── products.js     ← produtos e textos da interface em inglês
 ```

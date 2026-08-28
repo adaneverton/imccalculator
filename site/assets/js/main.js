@@ -13,12 +13,55 @@ const SITE_CONFIG = {
   email: 'contato@fivelines.com.br',
   instagram: 'fivelines',
   linkedin: 'https://www.linkedin.com/company/fivelines',
-  local: 'Todo o Brasil, com envio rastreado',
-  horario: 'Segunda a sexta, das 9h às 18h'
+  /* Estes dois aparecem no site em português e no site em inglês (/en/).
+     Escreva os dois idiomas: { pt: '...', en: '...' } */
+  local: {
+    pt: 'Todo o Brasil, com envio rastreado',
+    en: 'All of Brazil, with tracked shipping'
+  },
+  horario: {
+    pt: 'Segunda a sexta, das 9h às 18h',
+    en: 'Monday to Friday, 9am to 6pm'
+  }
 };
 
 (function () {
   'use strict';
+
+  /* Textos da interface por idioma. A página em inglês (/en/) usa "en"
+     por causa do atributo lang do <html>. */
+  const IDIOMA = (document.documentElement.lang || 'pt').toLowerCase().startsWith('en') ? 'en' : 'pt';
+  const TEXTOS = {
+    pt: {
+      saudacao: 'Olá! Vim pelo site da Five Lines e gostaria de um orçamento.',
+      carregando: 'Carregando…',
+      interesse: 'Tenho interesse no produto: {p}. ',
+      abertura: 'Olá, Five Lines! Gostaria de um orçamento.',
+      nome: 'Nome', contato: 'Contato', servico: 'Serviço', quantidade: 'Quantidade',
+      material: 'Material', prazo: 'Prazo', descricao: 'Descrição:',
+      faltamCampos: 'Preencha nome, contato e a descrição do projeto para continuar.',
+      pedidoMontado: 'Pedido montado! Se o WhatsApp não abrir, verifique o bloqueador de pop-ups.',
+      assunto: 'Orçamento de impressão 3D — {n}',
+      catalogo: 'Produto do catálogo'
+    },
+    en: {
+      saudacao: 'Hi! I came from the Five Lines website and I would like a quote.',
+      carregando: 'Loading…',
+      interesse: 'I am interested in this product: {p}. ',
+      abertura: 'Hello, Five Lines! I would like a quote.',
+      nome: 'Name', contato: 'Contact', servico: 'Service', quantidade: 'Quantity',
+      material: 'Material', prazo: 'Timing', descricao: 'Description:',
+      faltamCampos: 'Please fill in your name, contact and the project description to continue.',
+      pedidoMontado: 'Your request is ready. If WhatsApp does not open, check the pop-up blocker.',
+      assunto: '3D printing quote — {n}',
+      catalogo: 'A catalogue product'
+    }
+  };
+  const T = TEXTOS[IDIOMA];
+
+  // Aceita 'texto' ou { pt: '...', en: '...' }
+  const porIdioma = (valor) =>
+    (valor && typeof valor === 'object') ? (valor[IDIOMA] || valor.pt || '') : (valor || '');
 
   const $ = (sel, ctx = document) => ctx.querySelector(sel);
   const $$ = (sel, ctx = document) => Array.from(ctx.querySelectorAll(sel));
@@ -30,7 +73,7 @@ const SITE_CONFIG = {
     `https://wa.me/${SITE_CONFIG.whatsapp}` + (texto ? `?text=${encodeURIComponent(texto)}` : '');
 
   function preencherContatos() {
-    const saudacao = 'Olá! Vim pelo site da Five Lines e gostaria de um orçamento.';
+    const saudacao = T.saudacao;
 
     $$('[data-contact]').forEach((el) => {
       const tipo = el.dataset.contact;
@@ -39,19 +82,19 @@ const SITE_CONFIG = {
         el.href = whatsLink(saudacao);
         el.target = '_blank';
         el.rel = 'noopener';
-        if (el.textContent.trim() === 'Carregando…') el.textContent = SITE_CONFIG.whatsappDisplay;
+        if (el.textContent.trim() === T.carregando) el.textContent = SITE_CONFIG.whatsappDisplay;
       } else if (tipo === 'email') {
         el.href = `mailto:${SITE_CONFIG.email}`;
-        if (el.textContent.trim() === 'Carregando…') el.textContent = SITE_CONFIG.email;
+        if (el.textContent.trim() === T.carregando) el.textContent = SITE_CONFIG.email;
       } else if (tipo === 'instagram') {
         el.href = `https://instagram.com/${SITE_CONFIG.instagram}`;
-        if (el.textContent.trim() === 'Carregando…') el.textContent = '@' + SITE_CONFIG.instagram;
+        if (el.textContent.trim() === T.carregando) el.textContent = '@' + SITE_CONFIG.instagram;
       } else if (tipo === 'linkedin') {
         el.href = SITE_CONFIG.linkedin;
       } else if (tipo === 'local') {
-        el.textContent = SITE_CONFIG.local;
+        el.textContent = porIdioma(SITE_CONFIG.local);
       } else if (tipo === 'horario') {
-        el.textContent = SITE_CONFIG.horario;
+        el.textContent = porIdioma(SITE_CONFIG.horario);
       }
     });
   }
@@ -136,9 +179,9 @@ const SITE_CONFIG = {
       botao.addEventListener('click', () => {
         const produto = botao.dataset.quote;
 
-        if (servico) servico.value = 'Produto do catálogo';
+        if (servico) servico.value = T.catalogo;
         if (descricao) {
-          descricao.value = `Tenho interesse no produto: ${produto}. `;
+          descricao.value = T.interesse.replace('{p}', produto);
         }
 
         const contato = $('#contato');
@@ -159,16 +202,16 @@ const SITE_CONFIG = {
      --------------------------------------------------------- */
   function montarMensagem(dados) {
     return [
-      'Olá, Five Lines! Gostaria de um orçamento.',
+      T.abertura,
       '',
-      `Nome: ${dados.nome}`,
-      `Contato: ${dados.contato}`,
-      `Serviço: ${dados.servico}`,
-      `Quantidade: ${dados.quantidade}`,
-      `Material: ${dados.material}`,
-      `Prazo: ${dados.prazo}`,
+      `${T.nome}: ${dados.nome}`,
+      `${T.contato}: ${dados.contato}`,
+      `${T.servico}: ${dados.servico}`,
+      `${T.quantidade}: ${dados.quantidade}`,
+      `${T.material}: ${dados.material}`,
+      `${T.prazo}: ${dados.prazo}`,
       '',
-      'Descrição:',
+      T.descricao,
       dados.descricao
     ].join('\n');
   }
@@ -187,7 +230,7 @@ const SITE_CONFIG = {
 
     if (faltando.length) {
       feedback.hidden = false;
-      feedback.textContent = 'Preencha nome, contato e a descrição do projeto para continuar.';
+      feedback.textContent = T.faltamCampos;
       faltando[0].focus();
       return false;
     }
@@ -209,7 +252,7 @@ const SITE_CONFIG = {
       window.open(whatsLink(mensagem), '_blank', 'noopener');
 
       feedback.hidden = false;
-      feedback.textContent = 'Pedido montado! Se o WhatsApp não abrir, verifique o bloqueador de pop-ups.';
+      feedback.textContent = T.pedidoMontado;
     });
 
     const linkEmail = $('#linkEmail');
@@ -219,7 +262,7 @@ const SITE_CONFIG = {
         if (!validar(form, feedback)) return;
 
         const dados = coletar(form);
-        const assunto = `Orçamento de impressão 3D — ${dados.nome}`;
+        const assunto = T.assunto.replace('{n}', dados.nome);
         window.location.href =
           `mailto:${SITE_CONFIG.email}?subject=${encodeURIComponent(assunto)}` +
           `&body=${encodeURIComponent(montarMensagem(dados))}`;
