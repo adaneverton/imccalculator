@@ -14,30 +14,35 @@ window.CATALOGO = {
      1. DADOS DA LOJA
      --------------------------------------------------------- */
   loja: {
+    // País da loja: define o formato dos valores e a moeda
+    idioma: 'pt',
+    locale: 'en-IE',        // Irlanda: 1,234.50
+    moeda: 'EUR',           // código ISO: EUR, BRL, USD, GBP...
+
     nome: 'Five Lines',
     slogan: 'Impressão 3D sob medida',
 
-    // WhatsApp no formato internacional, só dígitos: 55 + DDD + número
-    whatsapp: '5599999999999',
+    // WhatsApp no formato internacional, só dígitos.
+    // Irlanda: 353 + número sem o zero inicial. Ex.: 353871234567
+    whatsapp: '353000000000',
 
     // Primeira linha da mensagem enviada pelo cliente
     saudacao: 'Olá! Vim pelo catálogo e gostaria de fazer um pedido.',
 
     instagram: 'fivelines',        // só o usuário, sem @ (deixe '' para esconder)
-    email: 'contato@fivelines.com.br',
+    email: 'hello@fivelines.ie',
 
     // true  = mostra os preços
     // false = esconde todos os preços e mostra "Sob consulta"
     mostrarPrecos: true,
-    moeda: 'R$',
 
     // Informações que aparecem no rodapé do catálogo
-    entrega: 'Envio para todo o Brasil ou retirada combinada',
-    pagamento: 'Pix, cartão ou dinheiro na retirada',
+    entrega: 'Envio para toda a Irlanda ou retirada combinada',
+    pagamento: 'Cartão, transferência, Revolut ou dinheiro na retirada',
     prazoPadrao: '3 a 7 dias úteis',
 
     // Aviso curto no rodapé (deixe '' para esconder)
-    aviso: 'Valores sujeitos a confirmação conforme tamanho, cor e material.'
+    aviso: 'Valores sujeitos a confirmação conforme tamanho, cor e material. Preços com IVA incluído.'
   },
 
   /* ---------------------------------------------------------
@@ -72,7 +77,7 @@ window.CATALOGO = {
        categoria ... um dos "id" da lista de categorias acima
        descricao ... texto curto do card
        detalhes .... texto maior, aparece ao abrir o produto (opcional)
-       preco ....... número, sem "R$". Ex.: 45 ou 45.90
+       preco ....... número, sem o símbolo da moeda. Ex.: 22 ou 22.50
        precoTexto .. use no lugar de "preco" para casos como 'Sob consulta'
        foto ........ 'fotos/arquivo.jpg' — deixe '' para usar o desenho padrão
        etiqueta .... selo no canto da foto: 'Novo', 'Mais pedido'... ('' esconde)
@@ -93,7 +98,7 @@ window.CATALOGO = {
       categoria: 'decoracao',
       descricao: 'Vaso decorativo com textura em espiral, impresso em parede única.',
       detalhes: 'Acabamento fosco e paredes finas que deixam a luz passar. Para uso com plantas, recomendamos manter a água em um recipiente interno.',
-      preco: 45,
+      preco: 22,
       foto: '',
       etiqueta: 'Mais pedido',
       disponivel: true,
@@ -108,7 +113,7 @@ window.CATALOGO = {
       categoria: 'decoracao',
       descricao: 'Sua foto vira relevo e aparece quando a luz acende.',
       detalhes: 'Envie a foto pelo WhatsApp depois de fazer o pedido. Fotos com bom contraste ficam melhores. Acompanha base com soquete e cabo.',
-      preco: 89,
+      preco: 39,
       foto: '',
       etiqueta: 'Presente',
       disponivel: true,
@@ -122,7 +127,7 @@ window.CATALOGO = {
       nome: 'Cachepô geométrico',
       categoria: 'decoracao',
       descricao: 'Vaso para suculentas com prato de apoio integrado.',
-      preco: 39,
+      preco: 18,
       foto: '',
       disponivel: true,
       opcoes: [
@@ -135,7 +140,7 @@ window.CATALOGO = {
       nome: 'Organizador de mesa',
       categoria: 'utilidades',
       descricao: 'Divisórias modulares para canetas, cabos e miudezas.',
-      preco: 55,
+      preco: 26,
       foto: '',
       disponivel: true,
       opcoes: [
@@ -148,7 +153,7 @@ window.CATALOGO = {
       nome: 'Suporte de headset',
       categoria: 'utilidades',
       descricao: 'Apoio de mesa ou de parafusar sob a mesa, com base antiderrapante.',
-      preco: 49,
+      preco: 24,
       foto: '',
       disponivel: true,
       opcoes: [
@@ -161,7 +166,7 @@ window.CATALOGO = {
       nome: 'Suporte de celular',
       categoria: 'utilidades',
       descricao: 'Ângulo ajustável e passagem para o cabo de carga.',
-      preco: 35,
+      preco: 16,
       foto: '',
       disponivel: true,
       opcoes: [
@@ -214,7 +219,7 @@ window.CATALOGO = {
       nome: 'Chaveiro personalizado',
       categoria: 'personalizados',
       descricao: 'Nome, logo ou ilustração em relevo, em duas cores.',
-      preco: 12,
+      preco: 6,
       foto: '',
       etiqueta: 'A partir de 5 un.',
       disponivel: true,
@@ -244,7 +249,7 @@ window.CATALOGO = {
       nome: 'Miniaturas e figures',
       categoria: 'colecionaveis',
       descricao: 'Impressão em resina para máximo detalhe.',
-      preco: 69,
+      preco: 29,
       foto: '',
       disponivel: true,
       opcoes: [
@@ -257,7 +262,7 @@ window.CATALOGO = {
       nome: 'Acessórios para jogos',
       categoria: 'colecionaveis',
       descricao: 'Torres de dados, organizadores e insertos sob medida para a sua caixa.',
-      preco: 79,
+      preco: 35,
       foto: '',
       disponivel: true,
       opcoes: [

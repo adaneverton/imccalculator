@@ -30,13 +30,15 @@ Todos os links de contato saem de um único lugar: o objeto `SITE_CONFIG`, no to
 
 ```js
 const SITE_CONFIG = {
-  whatsapp: '5599999999999',            // 55 + DDD + número, só dígitos
-  whatsappDisplay: '(00) 00000-0000',   // como o número aparece na tela
-  email: 'contato@fivelines.com.br',
+  whatsapp: '353000000000',             // Irlanda: 353 + número sem o zero
+  whatsappDisplay: '+353 00 000 0000',  // como o número aparece na tela
+  email: 'hello@fivelines.ie',
   instagram: 'fivelines',               // só o usuário, sem @
   linkedin: 'https://www.linkedin.com/company/fivelines',
-  local: 'Todo o Brasil, com envio rastreado',
-  horario: 'Segunda a sexta, das 9h às 18h'
+  local: { pt: 'Toda a Irlanda, com envio rastreado',
+           en: 'All of Ireland, with tracked delivery' },
+  horario: { pt: 'Segunda a sexta, das 9h às 18h',
+             en: 'Monday to Friday, 9am to 6pm' }
 };
 ```
 
@@ -63,13 +65,18 @@ As ilustrações dos cards são SVGs definidos no sprite no começo do `index.ht
 `<svg><use .../></svg>` por `<img src="assets/img/foto.jpg" alt="...">` — o estilo do
 card já cuida do enquadramento.
 
-### 3. Endereço do site
+### 3. País, moeda e endereço
 
-Se o domínio não for `fivelines.com.br`, atualize:
+Se o domínio não for `fivelines.ie`, atualize:
 
 - `<link rel="canonical">` e as metatags `og:` no `<head>` do `index.html`;
 - o bloco de dados estruturados (`application/ld+json`), incluindo telefone, e-mail e cidade;
 - `robots.txt` e `sitemap.xml`.
+
+O site está configurado para a **Irlanda**: valores em euro, envio pela An Post
+ou courier, telefone com +353 e dados estruturados com `addressCountry: IE` e
+`currenciesAccepted: EUR`. A cidade nos dados estruturados está como Dublin —
+troque pela sua.
 
 ## Como o formulário funciona
 

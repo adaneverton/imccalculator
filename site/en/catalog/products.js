@@ -14,31 +14,33 @@ window.CATALOGO = {
      1. STORE DETAILS
      --------------------------------------------------------- */
   loja: {
+    // Store country: drives number format and currency
     idioma: 'en',
-    locale: 'en-US',
+    locale: 'en-IE',        // Ireland: 1,234.50
+    moeda: 'EUR',           // ISO code: EUR, GBP, USD...
 
     nome: 'Five Lines',
     slogan: 'Custom 3D printing',
 
-    // WhatsApp in international format, digits only: 55 + area code + number
-    whatsapp: '5599999999999',
+    // WhatsApp in international format, digits only.
+    // Ireland: 353 + number without the leading zero. e.g. 353871234567
+    whatsapp: '353000000000',
 
     // First line of the message the customer sends
     saudacao: 'Hi! I found your catalogue and I would like to place an order.',
 
     instagram: 'fivelines',
-    email: 'contato@fivelines.com.br',
+    email: 'hello@fivelines.ie',
 
     // true  = show prices
     // false = hide every price and show "On request"
     mostrarPrecos: true,
-    moeda: 'R$',
 
-    entrega: 'Shipping across Brazil, or local pickup',
-    pagamento: 'Pix, card or cash on pickup',
-    prazoPadrao: '3 to 7 business days',
+    entrega: 'Delivery anywhere in Ireland, or local collection',
+    pagamento: 'Card, bank transfer, Revolut or cash on collection',
+    prazoPadrao: '3 to 7 working days',
 
-    aviso: 'Prices are confirmed after we check size, colour and material.'
+    aviso: 'Prices are confirmed after we check size, colour and material. VAT included.'
   },
 
   /* ---------------------------------------------------------
@@ -115,7 +117,7 @@ window.CATALOGO = {
        categoria ... one of the category ids above
        descricao ... short line on the card
        detalhes .... longer text shown when the product opens
-       preco ....... number, no currency symbol. e.g. 45 or 45.90
+       preco ....... number, no currency symbol. e.g. 22 or 22.50
        precoTexto .. use instead of "preco" for cases like 'On request'
        foto ........ 'photos/file.jpg' — leave '' for the default drawing
        etiqueta .... badge over the photo ('' hides it)
@@ -135,7 +137,7 @@ window.CATALOGO = {
       categoria: 'decoracao',
       descricao: 'Decorative vase with a spiral texture, printed in a single wall.',
       detalhes: 'Matte finish and thin walls that let the light through. For live plants, keep the water in an inner container.',
-      preco: 45,
+      preco: 22,
       foto: '',
       etiqueta: 'Best seller',
       disponivel: true,
@@ -150,7 +152,7 @@ window.CATALOGO = {
       categoria: 'decoracao',
       descricao: 'Your photo becomes relief and appears when the light turns on.',
       detalhes: 'Send the photo on WhatsApp after ordering. High-contrast pictures work best. Comes with the base, socket and cable.',
-      preco: 89,
+      preco: 39,
       foto: '',
       etiqueta: 'Gift idea',
       disponivel: true,
@@ -164,7 +166,7 @@ window.CATALOGO = {
       nome: 'Geometric planter',
       categoria: 'decoracao',
       descricao: 'Planter for succulents with a built-in saucer.',
-      preco: 39,
+      preco: 18,
       foto: '',
       disponivel: true,
       opcoes: [
@@ -177,7 +179,7 @@ window.CATALOGO = {
       nome: 'Desk organiser',
       categoria: 'utilidades',
       descricao: 'Modular dividers for pens, cables and small items.',
-      preco: 55,
+      preco: 26,
       foto: '',
       disponivel: true,
       opcoes: [
@@ -190,7 +192,7 @@ window.CATALOGO = {
       nome: 'Headset stand',
       categoria: 'utilidades',
       descricao: 'Desk stand or under-desk mount, with a non-slip base.',
-      preco: 49,
+      preco: 24,
       foto: '',
       disponivel: true,
       opcoes: [
@@ -203,7 +205,7 @@ window.CATALOGO = {
       nome: 'Phone stand',
       categoria: 'utilidades',
       descricao: 'Adjustable angle and a channel for the charging cable.',
-      preco: 35,
+      preco: 16,
       foto: '',
       disponivel: true,
       opcoes: [
@@ -256,7 +258,7 @@ window.CATALOGO = {
       nome: 'Custom keyring',
       categoria: 'personalizados',
       descricao: 'Name, logo or artwork in relief, in two colours.',
-      preco: 12,
+      preco: 6,
       foto: '',
       etiqueta: 'From 5 pcs',
       disponivel: true,
@@ -286,7 +288,7 @@ window.CATALOGO = {
       nome: 'Miniatures and figures',
       categoria: 'colecionaveis',
       descricao: 'Resin printing for the finest detail.',
-      preco: 69,
+      preco: 29,
       foto: '',
       disponivel: true,
       opcoes: [
@@ -299,7 +301,7 @@ window.CATALOGO = {
       nome: 'Tabletop accessories',
       categoria: 'colecionaveis',
       descricao: 'Dice towers, component trays and inserts made to fit your box.',
-      preco: 79,
+      preco: 35,
       foto: '',
       disponivel: true,
       opcoes: [

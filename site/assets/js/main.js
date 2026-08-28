@@ -6,18 +6,18 @@
    ========================================================= */
 
 const SITE_CONFIG = {
-  /* Número do WhatsApp no formato internacional, só dígitos:
-     55 (Brasil) + DDD + número. Ex.: 5511987654321  */
-  whatsapp: '5599999999999',
-  whatsappDisplay: '(00) 00000-0000',
-  email: 'contato@fivelines.com.br',
+  /* Número do WhatsApp no formato internacional, só dígitos.
+     Irlanda: 353 + número sem o zero inicial. Ex.: 353871234567 */
+  whatsapp: '353000000000',
+  whatsappDisplay: '+353 00 000 0000',
+  email: 'hello@fivelines.ie',
   instagram: 'fivelines',
   linkedin: 'https://www.linkedin.com/company/fivelines',
   /* Estes dois aparecem no site em português e no site em inglês (/en/).
      Escreva os dois idiomas: { pt: '...', en: '...' } */
   local: {
-    pt: 'Todo o Brasil, com envio rastreado',
-    en: 'All of Brazil, with tracked shipping'
+    pt: 'Toda a Irlanda, com envio rastreado',
+    en: 'All of Ireland, with tracked delivery'
   },
   horario: {
     pt: 'Segunda a sexta, das 9h às 18h',

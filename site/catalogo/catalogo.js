@@ -87,9 +87,18 @@
 
   const semAcento = (t) => String(t || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
 
-  const dinheiro = (v) =>
-    (loja.moeda || 'R$') + ' ' +
-    Number(v).toLocaleString(loja.locale || 'pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  /* Formata o valor conforme o país da loja.
+     Com "moeda" no código ISO (EUR, BRL, USD...), o símbolo e a posição
+     saem prontos do navegador: €45.00, R$ 45,00, $45.00. */
+  const dinheiro = (v) => {
+    const locale = loja.locale || 'en-IE';
+    const moeda = loja.moeda || 'EUR';
+    try {
+      return new Intl.NumberFormat(locale, { style: 'currency', currency: moeda }).format(v);
+    } catch (e) {
+      return moeda + ' ' + Number(v).toLocaleString(locale, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    }
+  };
 
   const precoDe = (p) => {
     if (!loja.mostrarPrecos) return T.sobConsulta;

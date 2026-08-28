@@ -22,8 +22,18 @@ Depois de editar, salve o arquivo e envie para a hospedagem. Não precisa compil
 ### Trocar o WhatsApp (faça isso primeiro)
 
 ```js
-whatsapp: '5599999999999',   // 55 + DDD + número, só dígitos
+whatsapp: '353000000000',   // Irlanda: 353 + número sem o zero inicial
 ```
+
+### País e moeda
+
+```js
+locale: 'en-IE',   // formato dos números: 1,234.50
+moeda: 'EUR',      // código ISO: EUR, GBP, USD, BRL...
+```
+
+O símbolo e a posição saem prontos do navegador: `EUR` + `en-IE` mostra
+**€45.00**; `BRL` + `pt-BR` mostraria **R$ 45,00**. Não escreva o símbolo à mão.
 
 ### Adicionar um produto
 
@@ -92,9 +102,9 @@ Olá! Vim pelo catálogo e gostaria de fazer um pedido.
 1) Chaveiro personalizado — 3 un.
    • Texto do chaveiro: Maria
    • Cor da base: Preto
-   R$ 12,00 cada — R$ 36,00
+   €6.00 cada — €18.00
 
-Total estimado: R$ 36,00
+Total estimado: €18.00
 ```
 
 ## Link de um produto específico
@@ -118,7 +128,7 @@ O catálogo é estático, então serve qualquer hospedagem:
   Repositório privado exige plano pago.
 - **Hospedagem própria**: envie a pasta por FTP.
 
-Com domínio próprio, o link da bio fica `fivelines.com.br/catalogo`.
+Com domínio próprio, o link da bio fica `fivelines.ie/catalogo`.
 
 ### Sobre privacidade
 
