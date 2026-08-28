@@ -8,9 +8,19 @@ pronto na sua conversa.
 - Sem cookies. O pedido em andamento fica só no navegador do cliente.
 - Sem back-end: são arquivos estáticos, hospedados em qualquer lugar.
 
+## Onde fica cada coisa
+
+```
+assets/catalogo/     ← você está aqui: o motor, igual nos dois idiomas
+assets/fotos/        ← fotos dos produtos (compartilhadas)
+catalog/products.js  ← catálogo em inglês  (/catalog/)
+pt/catalogo/produtos.js ← catálogo em português (/pt/catalogo/)
+```
+
 ## O arquivo que você edita
 
-**`produtos.js`** — é o único arquivo do dia a dia. Ele tem quatro partes:
+**`products.js`** (inglês) e **`produtos.js`** (português) — são os únicos arquivos
+do dia a dia. Cada um tem quatro partes:
 
 1. `loja` — WhatsApp, Instagram, prazo, entrega, pagamento e se os preços aparecem.
 2. `categorias` — os filtros que aparecem no topo.
@@ -86,8 +96,16 @@ O produto continua aparecendo, marcado como indisponível e sem botão de pedido
 
 ### Fotos
 
-Coloque os arquivos na pasta `fotos/` e aponte o caminho no produto. As instruções
-de tamanho e formato estão em `fotos/LEIA-ME.txt`.
+Coloque os arquivos em `assets/fotos/` e escreva **só o nome do arquivo** no produto:
+
+```js
+foto: 'vaso-espiral.jpg',
+```
+
+A pasta vem do campo `pastaFotos`, que já está ajustado em cada catálogo
+(`../assets/fotos/` no inglês, `../../assets/fotos/` no português) porque as duas
+páginas ficam em profundidades diferentes. Assim a mesma foto serve aos dois
+idiomas. As instruções de tamanho e formato estão em `assets/fotos/LEIA-ME.txt`.
 
 ## Como o cliente usa
 
@@ -112,7 +130,7 @@ Total estimado: €18.00
 Para mandar um único item para alguém, acrescente `?p=` e o `id` do produto:
 
 ```
-https://seusite.com.br/catalogo/?p=chaveiro
+https://fivelines.ie/catalog/?p=chaveiro
 ```
 
 O catálogo abre já com aquele produto na tela. É o link para responder
@@ -128,7 +146,8 @@ O catálogo é estático, então serve qualquer hospedagem:
   Repositório privado exige plano pago.
 - **Hospedagem própria**: envie a pasta por FTP.
 
-Com domínio próprio, o link da bio fica `fivelines.ie/catalogo`.
+Com domínio próprio, o link da bio fica `fivelines.ie/catalog` (ou
+`fivelines.ie/pt/catalogo` para o público brasileiro).
 
 ### Sobre privacidade
 
@@ -143,11 +162,11 @@ sem cookies e sem dados pessoais (Plausible, Umami ou GoatCounter), que respeita
 a LGPD melhor que o Google Analytics. Nesse caso, uma linha de script no
 `index.html` resolve.
 
-## Versão em inglês
+## Os dois idiomas
 
-O catálogo em inglês fica em `../en/catalog/` e usa **os mesmos** `catalogo.css`
-e `catalogo.js` — só muda o arquivo de dados, `products.js`, que traz os produtos
-traduzidos e um bloco `textos` com todas as frases da interface:
+O catálogo em português fica em `/pt/catalogo/` e usa **os mesmos** `catalogo.css`
+e `catalogo.js` daqui — só muda o arquivo de dados, que traz os produtos e um
+bloco `textos` com todas as frases da interface:
 
 ```js
 textos: {
@@ -157,24 +176,28 @@ textos: {
 }
 ```
 
-Se você criar um produto aqui, crie o equivalente lá (mesmo `id`) para os dois
-catálogos ficarem iguais. O botão **PT / EN** no topo troca de idioma, e cada
-idioma guarda o pedido separadamente no navegador.
+Ao criar um produto em um idioma, crie o equivalente no outro (mesmo `id`) para
+os dois catálogos ficarem iguais. O botão **PT / EN** no topo troca de idioma, e
+cada idioma guarda o pedido separadamente no navegador.
 
-Para um terceiro idioma, copie a pasta `en/catalog/`, traduza `products.js`
-(produtos + bloco `textos`) e ajuste `idioma` e `locale`.
+Para um terceiro idioma, copie a pasta `catalog/`, traduza `products.js`
+(produtos + bloco `textos`) e ajuste `idioma`, `locale` e `pastaFotos`.
 
 ## Arquivos
 
 ```
-catalogo/
-├── index.html      estrutura da página em português
-├── produtos.js     ← seus produtos e dados da loja (português)
-├── catalogo.css    aparência (usado pelos dois idiomas)
+assets/catalogo/
+├── catalogo.css    aparência (usada pelos dois idiomas)
 ├── catalogo.js     funcionamento (usado pelos dois idiomas)
-└── fotos/          fotos dos produtos (usadas pelos dois idiomas)
+└── README.md       este arquivo
 
-en/catalog/
+assets/fotos/       fotos dos produtos (usadas pelos dois idiomas)
+
+catalog/
 ├── index.html      estrutura da página em inglês
 └── products.js     ← produtos e textos da interface em inglês
+
+pt/catalogo/
+├── index.html      estrutura da página em português
+└── produtos.js     ← produtos e textos da interface em português
 ```

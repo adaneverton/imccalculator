@@ -99,14 +99,15 @@ O site é estático, então qualquer hospedagem serve.
 
 Depois de publicar, aponte o domínio para a hospedagem e ative o HTTPS.
 
-## Versão em inglês
+## Dois idiomas
 
-O site tem duas versões, com o mesmo visual e os mesmos arquivos de estilo:
+O site tem duas versões, com o mesmo visual e os mesmos arquivos de estilo.
+Como a loja fica na Irlanda, **o inglês é a versão principal**, na raiz:
 
-- `index.html` — português (`/`)
-- `en/index.html` — inglês (`/en/`)
-- `catalogo/` — catálogo em português (`/catalogo/`)
-- `en/catalog/` — catálogo em inglês (`/en/catalog/`)
+- `index.html` — inglês (`/`)
+- `catalog/` — catálogo em inglês (`/catalog/`)
+- `pt/index.html` — português (`/pt/`)
+- `pt/catalogo/` — catálogo em português (`/pt/catalogo/`)
 
 O botão **PT / EN** no menu troca de idioma, e as tags `hreflang` avisam os
 buscadores que as duas páginas são a mesma coisa em idiomas diferentes.
@@ -126,18 +127,28 @@ local: {
 
 ```
 site/
-├── index.html          página única, em português
-├── en/index.html       a mesma página, em inglês
-├── catalogo/           catálogo (português)
-├── en/catalog/         catálogo (inglês)
-├── site.webmanifest    ícones e nome para instalação como app
+├── index.html               site em inglês (página principal)
+├── catalog/                 catálogo em inglês
+│   ├── index.html
+│   └── products.js          ← produtos e textos em inglês
+├── pt/
+│   ├── index.html           site em português
+│   └── catalogo/
+│       ├── index.html
+│       └── produtos.js      ← produtos e textos em português
+├── site.webmanifest         ícones e nome para instalação como app
 ├── robots.txt
 ├── sitemap.xml
 ├── favicon.ico
 └── assets/
-    ├── css/styles.css  estilos (tokens de cor da marca no topo)
-    ├── js/main.js      SITE_CONFIG, menu, filtros, formulário
-    └── img/            logo em várias versões e ícones
+    ├── css/styles.css       estilos do site (tokens da marca no topo)
+    ├── js/main.js           SITE_CONFIG, menu, filtros, formulário
+    ├── catalogo/            motor do catálogo, usado pelos dois idiomas
+    │   ├── catalogo.css
+    │   ├── catalogo.js
+    │   └── README.md        como editar o catálogo
+    ├── fotos/               fotos dos produtos (compartilhadas)
+    └── img/                 logo em várias versões e ícones
 ```
 
 ## Detalhes de implementação

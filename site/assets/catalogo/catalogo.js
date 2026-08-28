@@ -116,8 +116,12 @@
     return p.desenho || DESENHOS[p.categoria] || DESENHO_PADRAO;
   };
 
+  // Caminho da foto: nome do arquivo + a pasta configurada em loja.pastaFotos
+  const caminhoFoto = (foto) =>
+    /^(https?:)?\//.test(foto) ? foto : (loja.pastaFotos || '') + foto;
+
   const arteDe = (p, classe) => p.foto
-    ? `<img src="${esc(p.foto)}" alt="${esc(p.nome)}" loading="lazy">`
+    ? `<img src="${esc(caminhoFoto(p.foto))}" alt="${esc(p.nome)}" loading="lazy">`
     : `<svg class="${classe || ''}" aria-hidden="true"><use href="#${desenho(p)}"></use></svg>`;
 
   const valoresDaOpcao = (opcao) =>
@@ -389,7 +393,7 @@
       const itens = pedido.map((it, i) => `
         <div class="item">
           <span class="item__foto">${it.foto
-            ? `<img src="${esc(it.foto)}" alt="">`
+            ? `<img src="${esc(caminhoFoto(it.foto))}" alt="">`
             : `<svg aria-hidden="true"><use href="#${desenho(it.id)}"></use></svg>`}</span>
           <span class="item__txt">
             <strong>${esc(it.nome)}</strong>

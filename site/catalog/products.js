@@ -36,6 +36,9 @@ window.CATALOGO = {
     // false = hide every price and show "On request"
     mostrarPrecos: true,
 
+    // Folder holding the product photos (shared with the Portuguese catalogue)
+    pastaFotos: '../assets/fotos/',
+
     entrega: 'Delivery anywhere in Ireland, or local collection',
     pagamento: 'Card, bank transfer, Revolut or cash on collection',
     prazoPadrao: '3 to 7 working days',
@@ -119,7 +122,8 @@ window.CATALOGO = {
        detalhes .... longer text shown when the product opens
        preco ....... number, no currency symbol. e.g. 22 or 22.50
        precoTexto .. use instead of "preco" for cases like 'On request'
-       foto ........ 'photos/file.jpg' — leave '' for the default drawing
+       foto ........ just the file name, e.g. 'vase.jpg' (the folder comes from
+                     pastaFotos). Leave '' for the default drawing
        etiqueta .... badge over the photo ('' hides it)
        disponivel .. false marks the product as unavailable
        opcoes ...... choices the customer makes

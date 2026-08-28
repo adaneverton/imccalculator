@@ -1,12 +1,12 @@
 {
-  "name": "Five Lines — Impressão 3D",
+  "name": "Five Lines — 3D Printing",
   "short_name": "Five Lines",
-  "description": "Impressão 3D sob medida: produtos personalizados, peças técnicas, protótipos e produção em pequena escala.",
+  "description": "Custom 3D printing: personalised products, technical parts, prototypes and small-batch production.",
   "start_url": "./",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#011e5a",
-  "lang": "pt-BR",
+  "lang": "en-IE",
   "icons": [
     { "src": "assets/img/favicon-32.png", "sizes": "32x32", "type": "image/png" },
     { "src": "assets/img/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" },

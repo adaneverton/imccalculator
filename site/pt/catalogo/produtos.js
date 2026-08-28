@@ -36,6 +36,9 @@ window.CATALOGO = {
     // false = esconde todos os preços e mostra "Sob consulta"
     mostrarPrecos: true,
 
+    // Pasta onde ficam as fotos dos produtos (compartilhada com o catálogo em inglês)
+    pastaFotos: '../../assets/fotos/',
+
     // Informações que aparecem no rodapé do catálogo
     entrega: 'Envio para toda a Irlanda ou retirada combinada',
     pagamento: 'Cartão, transferência, Revolut ou dinheiro na retirada',
@@ -79,7 +82,8 @@ window.CATALOGO = {
        detalhes .... texto maior, aparece ao abrir o produto (opcional)
        preco ....... número, sem o símbolo da moeda. Ex.: 22 ou 22.50
        precoTexto .. use no lugar de "preco" para casos como 'Sob consulta'
-       foto ........ 'fotos/arquivo.jpg' — deixe '' para usar o desenho padrão
+       foto ........ só o nome do arquivo, ex.: 'vaso.jpg' (a pasta vem de
+                     pastaFotos). Deixe '' para usar o desenho padrão
        etiqueta .... selo no canto da foto: 'Novo', 'Mais pedido'... ('' esconde)
        disponivel .. false marca o produto como indisponível
        prazo ....... prazo específico deste produto (opcional)
