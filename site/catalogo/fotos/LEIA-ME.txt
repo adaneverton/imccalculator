@@ -1,0 +1,18 @@
+COLOQUE AQUI AS FOTOS DOS PRODUTOS
+
+Como usar:
+1. Salve a foto nesta pasta, com nome simples, sem espaços nem acentos.
+   Exemplos: vaso-espiral.jpg, chaveiro.jpg, luminaria.jpg
+
+2. Abra o arquivo produtos.js e escreva o caminho da foto no produto:
+      foto: 'fotos/vaso-espiral.jpg',
+
+3. Enquanto o campo foto ficar vazio ( foto: '' ), o catálogo mostra
+   um desenho de acordo com a categoria do produto.
+
+Dicas para a foto ficar boa no catálogo:
+- Formato quadrado (mesma largura e altura). O catálogo corta o que sobra.
+- Entre 800 e 1200 pixels de lado já é suficiente.
+- Use .jpg para fotos e .webp se quiser arquivos menores.
+- Deixe cada arquivo abaixo de 300 KB para o catálogo abrir rápido no celular.
+- Fundo neutro e luz do dia resolvem bem, não precisa de estúdio.
